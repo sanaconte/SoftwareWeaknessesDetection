@@ -6,12 +6,12 @@ public class ProgramTest {
     public void programTest(String userData){
         String tainted = userData;
         String query = "select * from student where id=" + tainted;
-        String conn = mysqlConnect("localhost", "mysql_user", "mysql_password");
+        String conn = mysql_connect("localhost", "mysql_user", "mysql_password");
         mysql_select_db("dbname");
         echo("query : "+query+"<br /><br />");
         String res = mysql_query(query);
         List<String> data;
-        while ((data = mysql_fetch_array(res)).isEmpty()){
+        while (!(data = mysql_fetch_array(res)).isEmpty()){
             print_r(data);
             echo("<br />");
         }
@@ -44,7 +44,7 @@ public class ProgramTest {
         System.out.println("mysql_select_db");
     }
 
-    public String mysqlConnect(String localhost, String mysql_user, String mysql_password){
+    public String mysql_connect(String localhost, String mysql_user, String mysql_password){
         System.out.println("connecting ....");
         return "Successfull connection";
     }

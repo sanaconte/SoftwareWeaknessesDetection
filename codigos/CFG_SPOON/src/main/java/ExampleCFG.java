@@ -198,8 +198,8 @@ public class ExampleCFG {
 
             System.out.println("----------------------------------------------------------------------------------------------");
 
-           /* iterateUsingEntrySet(gen);
-            System.out.println("kill:");
+            iterateUsingEntrySet(gen);
+           /* System.out.println("kill:");
             iterateUsingEntrySet(kill);
             System.out.println("in:");
             iterateUsingEntrySet(in);

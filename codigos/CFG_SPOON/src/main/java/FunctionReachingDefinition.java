@@ -4,13 +4,11 @@ import spoon.reflect.code.CtAssignment;
 import spoon.reflect.code.CtExpression;
 import spoon.reflect.code.CtInvocation;
 import spoon.reflect.code.CtLocalVariable;
-import spoon.reflect.declaration.CtElement;
-import spoon.reflect.reference.CtTypeReference;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ReachingDefinition {
+public class FunctionReachingDefinition {
 
     private Map<ControlFlowNode, Set<String>> in ;
     private Map<ControlFlowNode, Set<String>> out;
@@ -18,10 +16,9 @@ public class ReachingDefinition {
     private Map<ControlFlowNode, Set<String>> kill;
 
     private Set<String> localVariables;
-    private  ControlFlowGraph graph;
+    private ControlFlowGraph graph;
 
-
-    public ReachingDefinition(ControlFlowGraph graph){
+    public FunctionReachingDefinition(ControlFlowGraph graph) {
         this.graph = graph;
         in = new HashMap();
         out = new HashMap();
@@ -31,22 +28,6 @@ public class ReachingDefinition {
         fillGen();
         fillKill();
         computeAlgorithm();
-    }
-
-    public ControlFlowGraph getGraph() {
-        return graph;
-    }
-
-    public Set<String> getLocalVariables() {
-        return localVariables;
-    }
-
-    public Map<ControlFlowNode, Set<String>> getIn() {
-        return in;
-    }
-
-    public Map<ControlFlowNode, Set<String>> getOut() {
-        return out;
     }
 
     private void fillLocalVariables(){
@@ -63,71 +44,43 @@ public class ReachingDefinition {
     private void fillGen(){
         Set<ControlFlowNode> controlFlowNodes = graph.vertexSet();
         controlFlowNodes.forEach(c -> {
-            if(c.getStatement() instanceof CtLocalVariable){
-                CtLocalVariable ctLocalVariable = (CtLocalVariable) c.getStatement();
-                if(ctLocalVariable.getAssignment() != null){
-                    String varName = ctLocalVariable.getReference().clone().toString();
-                    addElement(varName, c);
-                }else{
-                    gen.put(c, new HashSet<>());
-                }
+            if(c.getStatement() instanceof CtInvocation){
+                CtInvocation ctInvocation = (CtInvocation) c.getStatement();
+                List<CtExpression> expressions = (List<CtExpression>)ctInvocation.getArguments();
+                List<String> arguments = expressions.stream().map(exp -> exp.toString()).collect(Collectors.toList());
 
+                localVariables
+                        .stream().filter(var -> arguments.stream().anyMatch(a -> a.contains(var)))
+                        .forEach(var -> {
+                            Set<String> hash = new HashSet();
+                            hash.add(var+":"+c.getId());
+                            gen.put(c, hash);
+                        });
             }
-            else if(c.getStatement() instanceof CtAssignment){
-                CtAssignment ctAssignment = (CtAssignment) c.getStatement();
-                String varName = ctAssignment.getAssigned().toString();
-                addElement(varName, c);
-            }
-            else if(c.getStatement() != null) {
-                List<CtElement> els =  c.getStatement()
-                        .getElements(el -> el instanceof CtAssignment);
-                // considerar os Nodes que têm vários elementos ctAssignment
-                if(!els.isEmpty()){
-                    els.forEach(ctElement -> {
-                        CtAssignment ctAssignment = (CtAssignment) ctElement;
-                        String varName = ctAssignment.getAssigned().toString();
-                        addElement(varName, c);
-                    });
-                }else{
-                    gen.put(c, new HashSet<>());
-                }
-            }
-            else{
+            else {
                 gen.put(c, new HashSet<>());
             }
         });
-    }
-
-    private void addElement(String varName, ControlFlowNode c) {
-        Set<String> hash = new HashSet();
-        hash.add(varName + ":" + c.getId());
-        gen.put(c, hash);
     }
 
     private void fillKill(){
         List<String> list = gen.values().stream().flatMap(l -> l.stream()).collect(Collectors.toList());
         for (Map.Entry<ControlFlowNode, Set<String>> entry : gen.entrySet()) {
             ControlFlowNode cont = entry.getKey();
-            if(cont.getStatement() instanceof CtLocalVariable){
-                CtLocalVariable ctLocalVariable = (CtLocalVariable)cont.getStatement();
-                if(ctLocalVariable.getAssignment() != null){
-                    String varName = ctLocalVariable.getReference().clone().toString();
-                    List<String> listWithoutActual =
-                            list.stream().filter(str -> !str.equals(varName+cont.getId())).collect(Collectors.toList());
-                    Set<String> kills = getKills(listWithoutActual, varName);
-                    kill.put(entry.getKey(), kills);
-                }else{
-                    kill.put(cont, new HashSet());
-                }
 
+            if(cont.getStatement() instanceof CtInvocation){
 
-            }else if(cont.getStatement() instanceof CtAssignment){
-                CtAssignment ctAssignment = (CtAssignment)cont.getStatement();
-                String varName = ctAssignment.getAssigned().toString();
-                List<String> listWithoutActual =
-                        list.stream().filter(str -> !str.equals(varName+cont.getId())).collect(Collectors.toList());
-                Set<String> kills = getKills(listWithoutActual, varName);
-                kill.put(cont, kills);
+                CtInvocation ctInvocation = (CtInvocation) cont.getStatement();
+                List<CtExpression> expressions = (List<CtExpression>)ctInvocation.getArguments();
+                List<String> arguments = expressions.stream().map(exp -> exp.toString()).collect(Collectors.toList());
+                localVariables
+                        .stream().filter(var -> arguments.stream().anyMatch(a -> a.contains(var)))
+                        .forEach(var -> {
+                            List<String> listWithoutActual =
+                                    list.stream().filter(str -> !str.equals(var+":"+cont.getId())).collect(Collectors.toList());
+                            Set<String> kills = getKills(listWithoutActual, var);
+                            kill.put(cont, kills);
+                        });
             }
             else{
                 kill.put(cont, new HashSet());
@@ -139,7 +92,19 @@ public class ReachingDefinition {
         return  gen.stream().filter(m -> m.startsWith(varName)).collect(Collectors.toSet());
     }
 
+    public static void iterateUsingEntrySet(Map<ControlFlowNode, Set<String>> map) {
+
+        for (Map.Entry<ControlFlowNode, Set<String>> entry : map.entrySet()) {
+            String value = entry.getValue().stream().collect(Collectors.joining(",","{","}"));
+            System.out.println(entry.getKey().getId() + ":" + value);
+        }
+    }
+
     private void computeAlgorithm(){
+        System.out.println("gen:");
+        iterateUsingEntrySet(gen);
+        System.out.println("kill:");
+        iterateUsingEntrySet(kill);
         Set<ControlFlowNode> controlFlowNodes = this.graph.vertexSet();
         //preencher in a vazio e out com gen
         controlFlowNodes.forEach(b -> {
@@ -194,6 +159,7 @@ public class ReachingDefinition {
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------");
         controlFlowNodes.forEach(b -> {
+
             Set<String> genList = gen.get(b);
             Set<String> killList = kill.get(b);
             Set<String> inList = in.get(b);
@@ -209,5 +175,4 @@ public class ReachingDefinition {
 
         System.out.println("----------------------------------------------------------------------------------------------");
     }
-
 }

@@ -48,7 +48,7 @@ public class ReachingDefinitionTest {
             CtElement ctElement = Launcher
                     .parseClass(data)
                     .getElements(el -> el instanceof CtMethod).get(0);
-            System.out.println("ctElement: "+ctElement.toString());
+           // System.out.println("ctElement: "+ctElement.toString());
             //ctElement.accept(v);
             ControlFlowBuilder builder = new ControlFlowBuilder();
 
@@ -66,9 +66,13 @@ public class ReachingDefinitionTest {
             graph.simplifyBlockNodes();
             System.out.println(graph.toGraphVisText());
             ReachingDefinition rd = new ReachingDefinition(graph);
-            rd.prettyPrint();
+            //FunctionReachingDefinition frd = new FunctionReachingDefinition(graph);
+            //frd.prettyPrint();
+            //rd.prettyPrint();
             UseDefinitionChain useDefinition = new UseDefinitionChain(rd);
-            useDefinition.prettyPrint();
+            //useDefinition.prettyPrint();
+            useDefinition.printDataset();
+            //useDefinition.printFunctionUseDef();
 
         }catch (Exception e){
             e.printStackTrace();
