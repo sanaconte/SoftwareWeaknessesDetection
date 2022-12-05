@@ -21,16 +21,6 @@ import testcasesupport.*;
 
 public class CWE476_NULL_Pointer_Dereference__String_03
 {
-
-    public void test(){
-        int x;
-        int x = 5;
-        int y = 1;
-        while (x > 1) {
-            y = x * y;
-            x = x-1;
-        }
-    }
     public void bad() throws Throwable
     {
         String data;
@@ -50,6 +40,16 @@ public class CWE476_NULL_Pointer_Dereference__String_03
         {
             /* POTENTIAL FLAW: null dereference will occur if data is null */
             IO.writeLine("" + data.length());
+        }
+    }
+
+    public void test(){
+        int x;
+        int x = 5;
+        int y = 1;
+        while (x > 1) {
+            y = x * y;
+            x = x-1;
         }
     }
 

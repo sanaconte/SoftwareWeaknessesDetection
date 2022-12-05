@@ -1,11 +1,8 @@
 import fr.inria.controlflow.ControlFlowGraph;
 import fr.inria.controlflow.ControlFlowNode;
 import spoon.reflect.code.CtAssignment;
-import spoon.reflect.code.CtExpression;
-import spoon.reflect.code.CtInvocation;
 import spoon.reflect.code.CtLocalVariable;
 import spoon.reflect.declaration.CtElement;
-import spoon.reflect.reference.CtTypeReference;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,17 +17,24 @@ public class ReachingDefinition {
     private Set<String> localVariables;
     private  ControlFlowGraph graph;
 
+    CtElement functionCtElement;
 
-    public ReachingDefinition(ControlFlowGraph graph){
+
+    public ReachingDefinition(ControlFlowGraph graph, CtElement functionCtElement){
         this.graph = graph;
         in = new HashMap();
         out = new HashMap();
         gen =  new HashMap();
         kill = new HashMap();
+        this.functionCtElement = functionCtElement;
         fillLocalVariables();
         fillGen();
         fillKill();
         computeAlgorithm();
+    }
+
+    public CtElement getFunctionCtElement() {
+        return functionCtElement;
     }
 
     public ControlFlowGraph getGraph() {

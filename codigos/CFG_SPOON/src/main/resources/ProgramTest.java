@@ -4,8 +4,8 @@ import java.util.List;
 public class ProgramTest {
 
     public void programTest(String userData){
-        String tainted = userData;
-        String query = "select * from student where id=" + tainted;
+        String tainted = null;
+        String query = "select * from student where id=" + tainted.split(":");
         String conn = mysql_connect("localhost", "mysql_user", "mysql_password");
         mysql_select_db("dbname");
         echo("query : "+query+"<br /><br />");

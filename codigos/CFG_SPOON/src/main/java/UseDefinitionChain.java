@@ -1,27 +1,60 @@
 import fr.inria.controlflow.ControlFlowNode;
+import fr.inria.spoon.dataflow.scanners.CheckersScanner;
+import fr.inria.spoon.dataflow.warning.Warning;
+import org.apache.commons.collections4.list.TreeList;
+import spoon.Launcher;
 import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtElement;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
+import static fr.inria.spoon.dataflow.warning.WarningKind.NULL_DEREFERENCE;
 
 public class UseDefinitionChain {
+
+    private static final String NULL_POINTER_VUL = "NULL_POINTER_VUL";
 
     ReachingDefinition reachingDefinition;
     private Map<String, Set<String>> useDefinitionChain;
     private Map<ControlFlowNode, Map<String, Integer>> functionUseDef;
-
     private Set<String> functionSet;
+
+    private Launcher launcher = new Launcher();
+    private CheckersScanner scanner = new CheckersScanner(launcher.getFactory());
+    private Map<ControlFlowNode, Integer> nullPointerVulnerabilityMap;
 
     public UseDefinitionChain(ReachingDefinition reaching){
         reachingDefinition = reaching;
-
+        nullPointerVulnerabilityMap = new HashMap();
         useDefinitionChain = new HashMap();
         functionSet = new HashSet();
         fillUseDefinitionChain();
         fillFunctionUseDefEmpty();
         fillFunctionUseDefinition();
+    }
+
+    private ControlFlowNode findControlFlowNodeByCtElementPosition(Warning warning){
+        return reachingDefinition.getGraph()
+                .vertexSet()
+                .stream()
+                .filter(node -> node.getStatement() != null)
+                .filter(node ->
+                        node.getStatement().getPosition().getLine() == warning.position.getLine())
+                .findFirst().get();
+    }
+
+    private void scanVulnerabilitiesV2(){
+        scanner.scan(reachingDefinition.getFunctionCtElement());
+        List<Warning> warnings = scanner
+                .getWarnings().stream()
+                .filter(warning -> warning.kind == NULL_DEREFERENCE)
+                .collect(Collectors.toList());
+        warnings.forEach(warning -> {
+            ControlFlowNode node  = findControlFlowNodeByCtElementPosition(warning);
+            //functionUseDef.get(node).put(NULL_POINTER_VUL, 1);
+            nullPointerVulnerabilityMap.put(node, 1);
+        });
     }
 
     private void fillFunctionUseDefEmpty(){
@@ -38,8 +71,10 @@ public class UseDefinitionChain {
                     innerMap.put(functionName, 1);
                 }
             });
+            nullPointerVulnerabilityMap.put(c, 0);
             functionUseDef.put(c, innerMap);
         });
+        scanVulnerabilitiesV2();
     }
 
 
@@ -95,6 +130,9 @@ public class UseDefinitionChain {
     private void treatCtInvocation(CtInvocation ctInvocation, ReachingDefinition reachingDefinition, Map<String, ControlFlowNode> useSet, ControlFlowNode c) {
         List<CtExpression> expressions = (List<CtExpression>)ctInvocation.getArguments();
         List<String> arguments = expressions.stream().map(exp -> exp.toString()).collect(Collectors.toList());
+
+        // para remoção de todos os comentários.
+        ctInvocation.setComments(new ArrayList());
         String functionName = ctInvocation.prettyprint().split("\\(")[0];
         functionSet.add(functionName);
         reachingDefinition.getLocalVariables()
@@ -187,24 +225,6 @@ public class UseDefinitionChain {
             boolean processed = processNode(c, set);
             if(processed) {
                 processNodeChain(c, entry, set);
-                /**
-                List<CtExpression> expressions = set.stream()
-                        .map(ctInvocation -> (List<CtExpression>)ctInvocation.getArguments())
-                        .flatMap(list -> list.stream()).collect(Collectors.toList());
-                List<String> arguments = expressions.stream().map(exp -> exp.toString()).collect(Collectors.toList());
-                System.out.println("varName: "+ entry.getKey() + " In: "+reachingDefinition.getIn().get(entry.getValue()));
-                // String functionName = ctInvocation.prettyprint().split("\\(")[0];
-               // functionUseDef.get(c).put(functionName, 1);
-                reachingDefinition.getIn().get(entry.getValue())
-                        .stream()
-                        .filter(def -> def.startsWith(varName) || arguments.stream().anyMatch(arg -> arg.contains(def.split("\\:")[0])))
-                        .collect(Collectors.toList())
-                        .forEach(def -> {
-                            ControlFlowNode cfNode = getControlFlowNodeFromDefinition(def);
-                            List<CtInvocation> ctInvocationSet = getCtInvocation(cfNode);
-                            processNode(c, ctInvocationSet);
-                        });
-                 **/
             }
         }
     }
@@ -259,25 +279,33 @@ public class UseDefinitionChain {
         System.out.println("----------------------------------------------------------------------------------------------");
     }
 
-    public void printFunctionUseDef(){
+    public void printFunctionUseDef(String filePath){
+        List<String[]> data = new TreeList<>();
         String format = "   ";
         Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
         String functions = functionSet.stream().collect(Collectors.joining(format));
         functions = "Node"+format+functions;
+        functions = functions+format+NULL_POINTER_VUL;
+        String[] header = functions.split(format);
+        data.add(header);
         System.out.println("---------------------------------------------------------------------------------------------");
         System.out.println(functions);
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------");
         controlFlowNodes.forEach(b -> {
             Map<String, Integer> innerMap = functionUseDef.get(b);
+            Integer vulValue = nullPointerVulnerabilityMap.get(b);
             String line[] = {"" + b.getId()};
+            String form = ";   ";
             for (Map.Entry<String, Integer> entry : innerMap.entrySet()) {
                 Integer value = entry.getValue();
-                line[0] = line[0] + ";   " + value;
+                line[0] = line[0]+form+value+form+vulValue;
             }
+            data.add(line[0].split(form));
             System.out.println(line[0]);
             System.out.println();
         });
+        WriteCsvFileUtils.writeData(filePath, data);
     }
 
 
