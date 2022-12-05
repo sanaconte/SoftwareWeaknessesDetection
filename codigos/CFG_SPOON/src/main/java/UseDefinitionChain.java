@@ -294,13 +294,15 @@ public class UseDefinitionChain {
         System.out.println("---------------------------------------------------------------------------------------------");
         controlFlowNodes.forEach(b -> {
             Map<String, Integer> innerMap = functionUseDef.get(b);
+            //System.out.println("innerMap: "+innerMap);
             Integer vulValue = nullPointerVulnerabilityMap.get(b);
             String line[] = {"" + b.getId()};
             String form = ";   ";
             for (Map.Entry<String, Integer> entry : innerMap.entrySet()) {
                 Integer value = entry.getValue();
-                line[0] = line[0]+form+value+form+vulValue;
+                line[0] = line[0]+form+value;
             }
+            line[0] = line[0]+form+vulValue;
             data.add(line[0].split(form));
             System.out.println(line[0]);
             System.out.println();

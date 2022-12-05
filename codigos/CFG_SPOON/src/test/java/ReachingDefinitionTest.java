@@ -61,14 +61,14 @@ public class ReachingDefinitionTest {
                     model.getElements(el -> el instanceof CtMethod)
                             .stream()
                             .map(ctEl -> (CtMethod)ctEl)
-                            .peek(ctMethod -> System.out.println("ctMethod_peek: "+ ctMethod.getSimpleName()))
-                            //.filter(ctMethod -> "bad_sink".equals(ctMethod.getSimpleName()))
+                            //.peek(ctMethod -> System.out.println("ctMethod_peek: "+ ctMethod.getSimpleName()))
+                            .filter(ctMethod -> "programTest".equals(ctMethod.getSimpleName()))
                             .collect(Collectors.toList())
                             .get(0);
             //System.out.println("ctElement: "+ctElement);
-            Launcher
+           /* Launcher
                     .parseClass(data)
-                    .getElements(el -> el instanceof CtMethod).get(0);
+                    .getElements(el -> el instanceof CtMethod).get(0);*/
            // System.out.println("ctElement: "+ctElement.toString());
             //ctElement.accept(v);
             ControlFlowBuilder builder = new ControlFlowBuilder();
