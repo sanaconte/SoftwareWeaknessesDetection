@@ -48,13 +48,12 @@ public class ReachingDefinitionTest {
             String data = IOUtils.toString(fis, "UTF-8");
 
             Launcher launcher = new Launcher();
+            //55165-v1.0.0
             String project = "139910-v1.0.0";
             String val = "E:\\TFM\\SAMATE-DATA\\"+project;
             launcher.addInputResource(val+"/src/main/java");
             launcher.getEnvironment().setNoClasspath(true);
             CtModel model = launcher.buildModel();
-
-
 
             SpoonifierVisitor v = new SpoonifierVisitor(true);
             CtElement ctElement =
@@ -62,7 +61,7 @@ public class ReachingDefinitionTest {
                             .stream()
                             .map(ctEl -> (CtMethod)ctEl)
                             //.peek(ctMethod -> System.out.println("ctMethod_peek: "+ ctMethod.getSimpleName()))
-                            .filter(ctMethod -> "programTest".equals(ctMethod.getSimpleName()))
+                            .filter(ctMethod -> "bad".equals(ctMethod.getSimpleName()))
                             .collect(Collectors.toList())
                             .get(0);
             //System.out.println("ctElement: "+ctElement);
@@ -93,7 +92,7 @@ public class ReachingDefinitionTest {
             UseDefinitionChain useDefinition = new UseDefinitionChain(rd);
             //useDefinition.prettyPrint();
             //useDefinition.printDataset();
-            useDefinition.printFunctionUseDef(userDirectory+"/dataset/"+project+".csv");
+            useDefinition.printFunctionUseDef(userDirectory+"/dataset/"+project+".csv", project);
 
 
             CheckersScanner scanner = new CheckersScanner(launcher.getFactory());

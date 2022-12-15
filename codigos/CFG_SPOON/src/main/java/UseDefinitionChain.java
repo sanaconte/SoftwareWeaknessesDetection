@@ -13,7 +13,7 @@ import static fr.inria.spoon.dataflow.warning.WarningKind.NULL_DEREFERENCE;
 
 public class UseDefinitionChain {
 
-    private static final String NULL_POINTER_VUL = "NULL_POINTER_VUL";
+    private static final String NULL_POINTER_VUL = "VULNERABLE";
 
     ReachingDefinition reachingDefinition;
     private Map<String, Set<String>> useDefinitionChain;
@@ -279,13 +279,13 @@ public class UseDefinitionChain {
         System.out.println("----------------------------------------------------------------------------------------------");
     }
 
-    public void printFunctionUseDef(String filePath){
+    public void printFunctionUseDef(String filePath, String projectName){
         List<String[]> data = new TreeList<>();
         String format = "   ";
         Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
         String functions = functionSet.stream().collect(Collectors.joining(format));
-        functions = "Node"+format+functions;
-        functions = functions+format+NULL_POINTER_VUL;
+        functions = "PROJECT_NAME"+format+"Node"+format+NULL_POINTER_VUL+format+functions;
+       // functions = functions+format+NULL_POINTER_VUL;
         String[] header = functions.split(format);
         data.add(header);
         System.out.println("---------------------------------------------------------------------------------------------");
@@ -296,13 +296,13 @@ public class UseDefinitionChain {
             Map<String, Integer> innerMap = functionUseDef.get(b);
             //System.out.println("innerMap: "+innerMap);
             Integer vulValue = nullPointerVulnerabilityMap.get(b);
-            String line[] = {"" + b.getId()};
             String form = ";   ";
+            String line[] = {projectName+form+b.getId()+form+vulValue};
             for (Map.Entry<String, Integer> entry : innerMap.entrySet()) {
                 Integer value = entry.getValue();
                 line[0] = line[0]+form+value;
             }
-            line[0] = line[0]+form+vulValue;
+            //line[0] = line[0]+form+vulValue;
             data.add(line[0].split(form));
             System.out.println(line[0]);
             System.out.println();
