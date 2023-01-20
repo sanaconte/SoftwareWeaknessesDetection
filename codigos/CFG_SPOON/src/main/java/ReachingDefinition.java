@@ -194,7 +194,7 @@ public class ReachingDefinition {
         //prints the list objects in tabular format
         System.out.println("---------------------------------------------------------------------------------------------");
 
-        System.out.printf("%5s %20s %20s %20s %20s", "BLOCK", "GEN", "KILL", "IN", "OUT");
+        System.out.printf("%5s %20s %20s %20s %20s", "Node", "GEN", "KILL", "IN", "OUT");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------");
         controlFlowNodes.forEach(b -> {

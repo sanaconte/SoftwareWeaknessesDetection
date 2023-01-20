@@ -2,22 +2,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramTest {
-
-    public void programTest(String userData){
+      public void programTest(String userData){
         String tainted = null;
         String query = "select * from student where id=" + tainted.split(":");
         String conn = mysql_connect("localhost", "mysql_user", "mysql_password");
         mysql_select_db("dbname");
-        echo("query : "+query+"<br /><br />");
-        String res = mysql_query(query);
+        echo("query : "+query+ tainted.length()+ "<br /><br />");
+        String res = mysql_query(query+tainted.length());
         List<String> data;
         while (!(data = mysql_fetch_array(res)).isEmpty()){
             print_r(data);
-            echo("<br />");
+            echo("<br />" + tainted.length() + "<br />");
         }
         mysql_close(conn);
     }
-
+    public void test(){
+        int x = 5;
+        int y = 1;
+        while(x > 1){
+            y = x * y;
+            x = x - 1;
+        }
+    }
     public void mysql_close(String conn){
         System.out.println("closing connection ... "+ conn);
     }

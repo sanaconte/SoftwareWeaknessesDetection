@@ -8,6 +8,7 @@ import spoon.reflect.declaration.CtElement;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static fr.inria.spoon.dataflow.warning.WarningKind.NULL_DEREFERENCE;
 
@@ -310,10 +311,44 @@ public class UseDefinitionChain {
         WriteCsvFileUtils.writeData(filePath, data);
     }
 
+    public List<String> transformFile(String projectName){
+        List<String[]> data = new TreeList<>();
+        String format = "   ";
+        Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
+        String functions = functionSet.stream().collect(Collectors.joining(format));
+        functions = "PROJECT_NAME"+format+"Node"+format+NULL_POINTER_VUL+format+functions;
+        // functions = functions+format+NULL_POINTER_VUL;
+        String[] header = functions.split(format);
+        data.add(header);
+        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println(functions);
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------");
+        controlFlowNodes.forEach(b -> {
+            Map<String, Integer> innerMap = functionUseDef.get(b);
+            //System.out.println("innerMap: "+innerMap);
+            Integer vulValue = nullPointerVulnerabilityMap.get(b);
+            String form = ";   ";
+            String line[] = {projectName+form+b.getId()+form+vulValue};
+            for (Map.Entry<String, Integer> entry : innerMap.entrySet()) {
+                Integer value = entry.getValue();
+                line[0] = line[0]+form+value;
+            }
+            //line[0] = line[0]+form+vulValue;
+            data.add(line[0].split(form));
+            System.out.println(line[0]);
+            System.out.println();
+        });
+        //WriteCsvFileUtils.writeData(filePath, data);
+        return data.stream()
+                .map(line -> Arrays.stream(line).collect(Collectors.joining(",")))
+                .collect(Collectors.toList());
+    }
 
     public void printDataset(){
         List<String> functionList = new ArrayList();
         functionList.add("Node");
+        functionList.add("Vulnerable");
         functionList.addAll(functionSet);
         System.out.println("functionSet: "+ functionList);
         Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
@@ -330,6 +365,7 @@ public class UseDefinitionChain {
             Map<String, Integer> innerMap = functionUseDef.get(b);
             List<Integer> list = new ArrayList();
             list.add(b.getId());
+            list.add(nullPointerVulnerabilityMap.get(b));
             list.addAll(innerMap.values());
             System.out.printf(formatStr[0], list.toArray());
             System.out.println();
