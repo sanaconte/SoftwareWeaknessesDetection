@@ -2,6 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramTest {
+
+    public void commandInjection(String osCommand, String data){
+        /* POTENTIAL FLAW: command injection */
+        Process process = Runtime.getRuntime().exec(osCommand + data);
+        process.waitFor();
+    }
       public void programTest(String userData){
         String tainted = null;
         String query = "select * from student where id=" + tainted.split(":");

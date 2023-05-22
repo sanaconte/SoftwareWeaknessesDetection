@@ -409,3 +409,5 @@ fabric.properties
 
 # idea folder, uncomment if you don't need it
 # .idea
+/codigos/CFG_SPOON/dataset/samate-CI-dataset.csv.old1
+/codigos/CFG_SPOON/dataset/samate-CI-dataset.csv.old2

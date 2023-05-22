@@ -1,25 +1,23 @@
 import fr.inria.controlflow.ControlFlowBuilder;
 import fr.inria.controlflow.ControlFlowGraph;
 import fr.inria.controlflow.NaiveExceptionControlFlowStrategy;
-import fr.inria.spoon.dataflow.scanners.CheckersScanner;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
+import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.utils.CsvUtil;
+import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation.ReachingDefinition;
+import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation.UseDefinitionChain;
 import spoon.Launcher;
 import spoon.experimental.SpoonifierVisitor;
 import spoon.reflect.CtModel;
-import spoon.reflect.declaration.CtAnonymousExecutable;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtMethod;
-import spoon.support.reflect.declaration.CtMethodImpl;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.FileSystems;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -32,6 +30,8 @@ public class ReachingDefinitionTest {
         assertTrue(numbers.stream()
                 .mapToInt(val -> val)//Integer::intValue
                 .sum() > 5, () -> "Sum should be greater than 5");
+
+
     }
 
     @Test
@@ -57,7 +57,7 @@ public class ReachingDefinitionTest {
             CtModel model = launcher.buildModel();
 
             SpoonifierVisitor v = new SpoonifierVisitor(true);
-            CtElement ctElement =
+            /*CtElement ctElement =
                     model.getElements(el -> el instanceof CtMethod)
                             .stream()
                             .map(ctEl -> (CtMethod)ctEl)
@@ -66,12 +66,14 @@ public class ReachingDefinitionTest {
                             .collect(Collectors.toList())
                             .get(0);
 
+             */
+
             //System.out.println("ctElement: "+ctElement);
-           /* CtElement ctElement =
+            CtElement ctElement =
             Launcher
                     .parseClass(data)
                     .getElements(el -> el instanceof CtMethod).get(0);
-            */
+
            // System.out.println("ctElement: "+ctElement.toString());
             //ctElement.accept(v);
             ControlFlowBuilder builder = new ControlFlowBuilder();
@@ -89,15 +91,21 @@ public class ReachingDefinitionTest {
             graph.simplifyBlockNodes();
             graph.simplify();
             System.out.println(graph.toGraphVisText());
-            ReachingDefinition rd = new ReachingDefinition(graph, ctElement);
+            //ReachingDefinition rd = new ReachingDefinition(graph, ctElement);
             //FunctionReachingDefinition frd = new FunctionReachingDefinition(graph);
             //frd.prettyPrint();
            // rd.prettyPrint();
-            UseDefinitionChain useDefinition = new UseDefinitionChain(rd);
+           // UseDefinitionChain useDefinition = new UseDefinitionChain(rd);
             //useDefinition.prettyPrint();
             //useDefinition.printDataset();
-            useDefinition.printFunctionUseDef(userDirectory+"/dataset/"+project+".csv", project);
-
+            ReachingDefinition rd = new ReachingDefinition(graph, ctElement);
+            UseDefinitionChain useDefinition = new UseDefinitionChain(rd, Arrays.asList(7));
+            String projectMethodName = project + "-" + ((CtMethod) ctElement).getSimpleName();
+            List<String> transform =
+                    useDefinition.transformFile(projectMethodName);
+            List<List<String>> listaMatrizes = new ArrayList<>();
+            listaMatrizes.add(transform);
+            CsvUtil.criarUnicaMatriz(listaMatrizes, "test-fileName");
 
            /* CheckersScanner scanner = new CheckersScanner(launcher.getFactory());
             scanner.scan(ctElement);
@@ -120,6 +128,8 @@ public class ReachingDefinitionTest {
         }
     }
 
+    private String projectDirectory = "E:/TFM/TEST-DATA-CI/";
+
     @Test
     void testTransformFile(){
         String userDirectory = FileSystems.getDefault()
@@ -127,47 +137,84 @@ public class ReachingDefinitionTest {
                 .toAbsolutePath()
                 .toString();
 
-        InputStream inputStream = null;
+        String datasetTestName = "test-ci-dataset.csv";
+
         try {
 
-            List<String> projectList = List.of("55091-v1.0.0", "55105-v1.0.0", "55165-v1.0.0", "139910-v1.0.0");
-            List<List<String>> listaMatrizes = forEachProject(userDirectory, projectList);
-            CsvUtil.criarUnicaMatriz(listaMatrizes);
+            //String fileName = "CommandInjection.java";
+            List<String> projectList = List.of("SasanLabs");
+            List<Integer> potentialVulnerabilityLines = Arrays.asList(44,46,62,75,89,104,116,127);
+            Map<String, List<Integer>> fileList = new HashMap<>();
+            fileList.put("CommandInjection.java", potentialVulnerabilityLines);
+            //List<List<String>> listaMatrizes = forEachProject(projectList, potentialVulnerabilityLines);
+            String projectDirectory = "E:/TFM/TEST-DATA-CI/SasanLabs/";
+            List<List<String>> listaMatrizes = new ArrayList<>();
+            forProject(fileList, projectDirectory, listaMatrizes);
+            CsvUtil.criarUnicaMatriz(listaMatrizes, datasetTestName);
 
         }catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+
     }
 
-    private List<List<String>> forEachProject(String userDirectory, List<String> projectList) {
-        List<List<String>> listaMatrizes = new ArrayList<>();
-        for (String project: projectList) {
 
-            Launcher launcher = new Launcher();
-            String val = "E:\\TFM\\SAMATE-DATA\\"+project;
-            launcher.addInputResource(val+"/src/main/java");
-            launcher.getEnvironment().setNoClasspath(true);
-            CtModel model = launcher.buildModel();
+    private String getContent(String fileName){
 
-            SpoonifierVisitor v = new SpoonifierVisitor(true);
+        String uri = projectDirectory+fileName;
+
+        FileInputStream vulFile =
+                null;
+        try {
+            vulFile = new FileInputStream(uri);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String content = null;
+        try {
+            content = IOUtils.toString(vulFile, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content;
+    }
+
+
+
+    private void forProject(Map<String, List<Integer>> fileList,
+                            String projectDirectory,
+                            List<List<String>> listaMatrizes){
+
+        for(Map.Entry<String, List<Integer>> entry:fileList.entrySet()){
+            String uri = projectDirectory+entry.getKey();
+            List<Integer> vulnerableLines = entry.getValue();
+            //int startLine = location.getPhysicalLocation().getRegion().getStartLine();
+
+            FileInputStream vulFile = null;
+            try {
+                vulFile = new FileInputStream(uri);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            String content = null;
+            try {
+                content = IOUtils.toString(vulFile, "UTF-8");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             List<CtElement> ctElement =
-                    model.getElements(el -> el instanceof CtMethod)
+                    Launcher
+                            .parseClass(content)
+                            .getElements(el -> el instanceof CtMethod)
                             .stream()
                             .map(ctEl -> (CtMethod)ctEl)
-                            //.peek(ctMethod -> System.out.println("ctMethod_peek: "+ ctMethod.getSimpleName()))
-                            .filter(ctMethod -> ctMethod.getSimpleName().startsWith("bad"))
+                            //.filter(ctMethod -> /**ctMethod.getSimpleName().startsWith("good") ||**/
+                              //      ctMethod.getSimpleName().startsWith("bad") ||
+                                //            ctMethod.getSimpleName().contains("bad")  )
                             .filter(ctMethod -> ctMethod.getBody() != null)
                             .collect(Collectors.toList());
-                            //.get(0);
 
             ControlFlowBuilder builder = new ControlFlowBuilder();
 
@@ -181,16 +228,59 @@ public class ReachingDefinitionTest {
                         builder.build(ctElem);
                 graph.simplifyBlockNodes();
                 graph.simplify();
-                System.out.println(graph.toGraphVisText());
+                //System.out.println(graph.toGraphVisText());
                 ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
-                UseDefinitionChain useDefinition = new UseDefinitionChain(rd);
-                String projectMethodName = project + "-" + ((CtMethod) ctElem).getSimpleName();
+                UseDefinitionChain useDefinition = new UseDefinitionChain(rd, vulnerableLines);
+                String projectMethodName = projectDirectory + "-" + ((CtMethod) ctElem).getSimpleName();
                 List<String> transform =
                         useDefinition.transformFile(projectMethodName);
                 listaMatrizes.add(transform);
 
             });
+        }
 
+    }
+
+    private List<List<String>> forEachProject(List<String> projectList, List<Integer> potentialVulnerabilityLines) {
+        List<List<String>> listaMatrizes = new ArrayList<>();
+        for (String project: projectList) {
+
+           // String content = getContent(project);
+            String val = "E:/TFM/TEST-DATA-CI/"+project;
+            Launcher launcher = new Launcher();
+            launcher.addInputResource(val);
+            launcher.getEnvironment().setNoClasspath(true);
+            CtModel model = launcher.buildModel();
+
+            List<CtElement> ctElement =
+                    model.getElements(el -> el instanceof CtMethod)
+                            .stream()
+                            .map(ctEl -> (CtMethod)ctEl)
+                            //.peek(ctMethod -> System.out.println("ctMethod_peek: "+ ctMethod.getSimpleName()))
+                            //.filter(ctMethod -> "getResponseFromPingCommand".equals(ctMethod.getSimpleName()))
+                            .filter(ctMethod -> ctMethod.getBody() != null)
+                            .collect(Collectors.toList());
+
+
+            ControlFlowBuilder builder = new ControlFlowBuilder();
+
+            EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
+            options = EnumSet.of(NaiveExceptionControlFlowStrategy.Options.ReturnWithoutFinalizers);
+            builder.setExceptionControlFlowStrategy(new NaiveExceptionControlFlowStrategy(options));
+
+             ctElement.forEach(ctElem -> {
+                 ControlFlowGraph graph =
+                         builder.build(ctElem);
+                 graph.simplifyBlockNodes();
+                 graph.simplify();
+                 //System.out.println(graph.toGraphVisText());
+                 ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
+                 UseDefinitionChain useDefinition = new UseDefinitionChain(rd, potentialVulnerabilityLines);
+                 String projectMethodName = project + "-" + ((CtMethod) ctElem).getSimpleName();
+                 List<String> transform =
+                         useDefinition.transformFile(projectMethodName);
+                 listaMatrizes.add(transform);
+             });
         }
         return listaMatrizes;
     }

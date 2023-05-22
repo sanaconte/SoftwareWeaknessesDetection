@@ -10,7 +10,7 @@ from tools.data_tools import frange
 
 
 def get_auc_score(Y, probas):
-    precision, recall, _ = precision_recall_curve(Y, probas[:, 1], 1)
+    precision, recall, _ = precision_recall_curve(y_true=Y, probas_pred= probas[:, 1], pos_label=1)
     area = auc(recall, precision)
 
     return precision, recall, area
@@ -50,8 +50,10 @@ def print_metrics(model, X, Y):
     print_notice(metrics.classification_report(Y, predicted, target_names=['not vulnerable', 'vulnerable']))
 
 
+
+
 def calculate_brier_score(probas, Y, cls):
-    indexes = Y[Y == cls].index
+    indexes = np.where(Y == cls) #Y[Y == cls].index
 
     return _brier_score_loss(Y[indexes], probas[indexes][:, 1])
 
