@@ -218,3 +218,6 @@ TSWLatexianTemp*
 .idea/
 *.iml
 *.iws
+
+# CSV Files
+*.csv
