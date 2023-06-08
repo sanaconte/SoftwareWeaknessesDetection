@@ -4,6 +4,8 @@ import fr.inria.controlflow.ControlFlowBuilder;
 import fr.inria.controlflow.ControlFlowGraph;
 import fr.inria.controlflow.NaiveExceptionControlFlowStrategy;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.utils.CsvUtil;
 import spoon.Launcher;
 import spoon.reflect.CtModel;
@@ -38,7 +40,7 @@ public class Transform {
         return content;
     }
 
-    private static List<CtElement> getMethodsFromProject(String projectDirectory, Set<String> features){
+    public static List<CtElement> getMethodsFromProject(String projectDirectory, Set<String> features){
         Launcher launcher = new Launcher();
         //55165-v1.0.0
         //String project =  projectName //"55165-v1.0.0";
@@ -52,6 +54,23 @@ public class Transform {
                         .filter(method -> method.getBody() !=null)
                         .filter(ctMethod -> containsVulnerableFeatures(ctMethod, features))
                         .collect(Collectors.toList());
+
+    }
+
+    public static List<CtElement> filterMethodByName(String projectDirectory, Set<String> methods){
+        Launcher launcher = new Launcher();
+        //55165-v1.0.0
+        //String project =  projectName //"55165-v1.0.0";
+        //String val =  "E:\\TFM\\SAMATE-DATA\\"+project;
+        launcher.addInputResource(projectDirectory+"/src/main/java");
+        launcher.getEnvironment().setNoClasspath(true);
+        CtModel model = launcher.buildModel();
+        return  model.getElements(el -> el instanceof CtMethod)
+                .stream()
+                .map(ctEl -> (CtMethod)ctEl)
+                .filter(method -> method.getBody() !=null)
+                .filter(ctMethod -> methods.stream().anyMatch(feat-> ctMethod.getSimpleName().equals(feat) || ctMethod.getSimpleName().contains(feat)) )
+                .collect(Collectors.toList());
 
     }
 
@@ -76,13 +95,13 @@ public class Transform {
                 .toAbsolutePath()
                 .toString();
 
-        InputStream inputStream = null;
+        //InputStream inputStream = null;
         try {
             // inputs - exemplo para um projeto de test
             String projectDirectory = "E:/TFM/Trabalho/ProgramaTest/";
             List<Integer> vulnerableLines = Arrays.asList(8);
             String datasetFileName = "programTest.csv";
-            List<CtElement> methodList =getMethodsFromProject(projectDirectory, features);
+            List<CtElement> methodList = getMethodsFromProject(projectDirectory, features);
 
             //exemplo para um projeto SAMATE
 //            String projectDirectory =  "E:/TFM/SAMATE-DATA-CI/144758-v1.0.0";
@@ -92,8 +111,29 @@ public class Transform {
 //            List<CtElement> methodList =getMethodsFromProject(projectDirectory, features);
 
             List<List<String>> listaMatrizes = new ArrayList<>();
-            methodList.forEach(ctElem -> {
-
+//            methodList .forEach(ctElem -> {
+//
+//                ControlFlowBuilder builder = new ControlFlowBuilder();
+//
+//                EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
+//                options = EnumSet.of(NaiveExceptionControlFlowStrategy.Options.ReturnWithoutFinalizers);
+//                builder.setExceptionControlFlowStrategy(new NaiveExceptionControlFlowStrategy(options));
+//
+//                ControlFlowGraph graph =
+//                        builder.build(ctElem);
+//                graph.simplifyBlockNodes();
+//                graph.simplify();
+//                System.out.println(graph.toGraphVisText());
+//                ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
+//                AdaptedUseDefinitionChain useDefinition = new AdaptedUseDefinitionChain(rd, vulnerableLines, features);
+//                String projectMethodName = ctElem.getPosition().getFile().getName();
+//                List<String> transform =
+//                        useDefinition.transformFile(projectMethodName);
+//                listaMatrizes.add(transform);
+//                //useDefinition.printDataset();
+//
+//            });
+            methodList .forEach(ctElem -> {
                 ControlFlowBuilder builder = new ControlFlowBuilder();
 
                 EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
@@ -106,13 +146,18 @@ public class Transform {
                 graph.simplify();
                 System.out.println(graph.toGraphVisText());
                 ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
-                AdaptedUseDefinitionChain useDefinition = new AdaptedUseDefinitionChain(rd, vulnerableLines, features);
                 String projectMethodName = ctElem.getPosition().getFile().getName();
+                Pair<String, Integer> pa = new ImmutablePair<>("a.java", 2);
+
+                Map<String, List<Integer>> VulnerabilityMap = new HashMap<>();
+                VulnerabilityMap.put("a.java", Arrays.asList(33, 19));
+                System.out.println("VulnerabilityMap: "+VulnerabilityMap);
+                FeaturesExtraction featuresExtraction = new FeaturesExtraction(rd, projectMethodName, VulnerabilityMap);
+                featuresExtraction.executeExtraction();
                 List<String> transform =
-                        useDefinition.transformFile(projectMethodName);
+                        featuresExtraction.getResultExtraction();
                 listaMatrizes.add(transform);
                 //useDefinition.printDataset();
-
             });
             CsvUtil.printDataset(listaMatrizes);
             //CsvUtil.createDataset(listaMatrizes, datasetFileName);
@@ -121,14 +166,14 @@ public class Transform {
         }catch (Exception e){
             e.printStackTrace();
         }
-        finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+//        finally {
+//            if (inputStream != null) {
+//                try {
+//                    inputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
     }
 }

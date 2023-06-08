@@ -5,6 +5,7 @@ import fr.inria.controlflow.ControlFlowNode;
 import spoon.reflect.code.CtAssignment;
 import spoon.reflect.code.CtLocalVariable;
 import spoon.reflect.declaration.CtElement;
+import spoon.reflect.declaration.CtVariable;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,6 +19,8 @@ public class ReachingDefinition {
 
     private Set<String> localVariables;
     private  ControlFlowGraph graph;
+
+    private Set<CtVariable> variables = new HashSet<>();
 
     CtElement functionCtElement;
 
@@ -33,6 +36,10 @@ public class ReachingDefinition {
         fillGen();
         fillKill();
         computeAlgorithm();
+    }
+
+    public Set<CtVariable> getVariables() {
+        return variables;
     }
 
     public CtElement getFunctionCtElement() {
@@ -64,6 +71,11 @@ public class ReachingDefinition {
                         .map(c -> (CtLocalVariable)c.getStatement())
                         .map(c -> c.getReference().clone().toString())
                         .collect(Collectors.toSet());
+        variables = controlFlowNodes
+                .stream()
+                .filter(c -> c.getStatement() instanceof CtVariable)
+                .map(c -> (CtVariable)c.getStatement())
+                .collect(Collectors.toSet());
     }
 
     private void fillGen(){

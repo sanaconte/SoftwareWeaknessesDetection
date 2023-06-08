@@ -5,27 +5,29 @@ import fr.inria.spoon.dataflow.warning.Warning;
 import org.apache.commons.collections4.list.TreeList;
 import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.utils.WriteCsvFileUtils;
 import spoon.Launcher;
-import spoon.reflect.code.CtAssignment;
-import spoon.reflect.code.CtExpression;
-import spoon.reflect.code.CtInvocation;
-import spoon.reflect.code.CtLocalVariable;
+import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtElement;
+import spoon.reflect.declaration.CtField;
+import spoon.reflect.declaration.CtVariable;
+import spoon.reflect.reference.CtVariableReference;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class AdaptedUseDefinitionChain {
 
-    private static final String NULL_POINTER_VUL = "VULNERABLE";
+    private static final String VULNERABLE = "VULNERABLE";
 
     private ReachingDefinition reachingDefinition;
     private Map<String, Set<String>> useDefinitionChain;
     private Map<ControlFlowNode, Map<String, Integer>> functionUseDef;
     private Set<String> functionSet;
 
+
     private Launcher launcher = new Launcher();
     //private CheckersScanner scanner = new CheckersScanner(launcher.getFactory());
     private Map<ControlFlowNode, Integer> vulnerabilityMap;
+    private Map<ControlFlowNode, Integer> taintedLines = new HashMap<>();
 
     private List<Integer> vulnerableLines;
 
@@ -70,22 +72,153 @@ public class AdaptedUseDefinitionChain {
                 .findFirst().get();
     }
 
+    private void fillTaintedLines(List<CtExpression<?>> arguments, ControlFlowNode c){
+        arguments.stream().forEach(e ->{
+            System.out.println("(e instanceof CtAssignment): "+ (e instanceof CtAssignment));
+            System.out.println("(e instanceof CtConditional): "+ (e instanceof CtConditional));
+            System.out.println("(e instanceof CtBinaryOperator): "+ (e instanceof CtBinaryOperator));
+            System.out.println("(e instanceof CtInvocation): "+ (e instanceof CtInvocation));
+            System.out.println("(e instanceof CtField): "+ (e instanceof CtField));
+            System.out.println("(e instanceof CtVariableAccess): "+ (e instanceof CtVariableAccess));
+            System.out.println("(e instanceof CtVariable): "+ (e instanceof CtVariable));
+            System.out.println("(e instanceof CtVariableRead): "+ (e instanceof CtVariableRead));
+            System.out.println("(e instanceof CtVariableWrite): "+ (e instanceof CtVariableWrite));
+            System.out.println("(e instanceof CtVariableReference): "+ (e instanceof CtVariableReference));
+            System.out.println("(e instanceof CtLiteral): "+ (e instanceof CtLiteral));
+            if(e instanceof CtVariableAccess){
+                System.out.println("is CtVariableAccess");
+                boolean isTainted = isTainted(e);
+                System.out.println("isTainted: "+isTainted);
+                if(isTainted) {
+                    taintedLines.put(c, 1);
+                }else{
+                    taintedLines.put(c, 0);
+                }
+            }
+            else if(e instanceof CtBinaryOperator){
+                System.out.println("is CtBinaryOperator");
+                CtBinaryOperator binaryOperator = (CtBinaryOperator)e;
+                boolean isTainted = isTaintedCtBinaryOperator(binaryOperator);
+                System.out.println("isTainted: "+isTainted);
+                if(isTainted) {
+                    taintedLines.put(c, 1);
+                }else{
+                    taintedLines.put(c, 0);
+                }
+            }
+            else {
+                taintedLines.put(c, 0);
+            }
+        });
+    }
+
+    private boolean isTaintedCtBinaryOperator(CtBinaryOperator binaryOperator){
+        CtExpression<?> leftHandOperand = binaryOperator.getLeftHandOperand();
+        CtExpression<?> rightHandOperand = binaryOperator.getRightHandOperand();
+        if(leftHandOperand instanceof CtVariableAccess &&
+                rightHandOperand instanceof CtVariableAccess) {
+            boolean isLeftHandOperandTainted = isTainted(binaryOperator.getLeftHandOperand());
+            System.out.println("isLeftHandOperandTainted: " + isLeftHandOperandTainted);
+
+            boolean isRightHandOperandTainted = isTainted(binaryOperator.getRightHandOperand());
+            System.out.println("isRightHandOperandTainted: " + isRightHandOperandTainted);
+            return isRightHandOperandTainted || isLeftHandOperandTainted;
+        }
+        else if(rightHandOperand instanceof CtVariableAccess &&
+                !(leftHandOperand instanceof CtVariableAccess)) {
+            boolean isRightHandOperandTainted = isTainted(binaryOperator.getRightHandOperand());
+            System.out.println("isRightHandOperandTainted: " + isRightHandOperandTainted);
+            return isRightHandOperandTainted;
+        }
+        else if(!(rightHandOperand instanceof CtVariableAccess) &&
+                (leftHandOperand instanceof CtVariableAccess)) {
+            boolean isLeftHandOperandTainted = isTainted(binaryOperator.getLeftHandOperand());
+            System.out.println("isLeftHandOperandTainted: " + isLeftHandOperandTainted);
+            return isLeftHandOperandTainted;
+        }
+        else {
+            System.out.println("The both operand are not CtVariableAccess");
+            return false;
+        }
+    }
+
+    /*
+        É considerado tainted se não for Constante
+        e não for do tipo primitivo
+        e se o valor não for um literal.
+        ou se tiver valor com expressao BinaryOperator tainted
+    */
+    private boolean isTainted(CtExpression<?> e){
+        CtVariableAccess ctVariableAccess = (CtVariableAccess) e;
+        boolean isConstant =
+                ctVariableAccess.getVariable().getDeclaration().isFinal();
+        boolean isPrimitive = ctVariableAccess.getVariable().getDeclaration().getType().isPrimitive();
+        boolean isLiteral =
+                ctVariableAccess.getVariable().getDeclaration().getDefaultExpression() instanceof CtLiteral;
+
+        // verificar se o valor da varivel não é um BinaryOperator com possíveis dados tainted
+        boolean isBinaryOperator =  ctVariableAccess
+                .getVariable().getDeclaration()
+                .getDefaultExpression() instanceof CtBinaryOperator;
+        boolean isTaintedCtBinaryOperator = false;
+        if(isBinaryOperator){
+            CtBinaryOperator binaryOperator = (CtBinaryOperator)
+                    ctVariableAccess
+                    .getVariable().getDeclaration()
+                    .getDefaultExpression();
+            isTaintedCtBinaryOperator = isTaintedCtBinaryOperator(binaryOperator);
+        }
+
+        System.out.println("isConstant: "+isConstant);
+        System.out.println("isPrimitive: "+isPrimitive);
+        System.out.println("isLiteral: "+isLiteral);
+        System.out.println("isTaintedCtBinaryOperator: "+isTaintedCtBinaryOperator);
+
+        return (!isConstant && !isPrimitive && !isLiteral) || isTaintedCtBinaryOperator;
+    }
+
+    private CtInvocation getFunctionInvoked(String funcName, ControlFlowNode c){
+        String[] split = funcName.split("\\.");
+        String method;
+        if(split.length>0) {
+            method = split[split.length-1];
+        }else{
+            method = funcName;
+        }
+        CtInvocation ctInvocation = c.getStatement()
+                .getElements(el -> el instanceof CtInvocation)
+                .stream().map(el -> (CtInvocation) el)
+                .filter(el -> el.getExecutable().getSimpleName().equals(method))
+                .findAny()
+                .orElse(null);
+
+        return ctInvocation;
+    }
+
     private void fillFunctionUseDefEmpty(){
         functionUseDef = new HashMap( );
         reachingDefinition.getGraph().vertexSet().forEach(c -> {
             Map<String, Integer> innerMap = new HashMap();
-            List<CtInvocation> ctInvocationSet = getCtInvocation(c);
+            taintedLines.put(c, 0);
+            vulnerabilityMap.put(c, 0);
+            //List<CtInvocation> ctInvocationSet = getCtInvocation(c);
             functionSet.forEach(funcName -> {
                 innerMap.put(funcName, 0);
                 if(c.getStatement() != null &&
                         c.getStatement().prettyprint().contains(funcName)) {
-                        innerMap.put(funcName, 1);
+                    System.out.println("funcName: "+funcName);
+                    CtInvocation ctInvocation = getFunctionInvoked(funcName, c);
+                    List<CtExpression<?>> arguments = ctInvocation.getArguments();
+                    fillTaintedLines(arguments, c);
+                    innerMap.put(funcName, 1);
+                    // potencialmente vulneravel todos os sítios onde foram invocados as funções presente na lista de  caracteristicas
+                    vulnerabilityMap.put(c, 1);
                 }
             });
-            vulnerabilityMap.put(c, 0);
+            //vulnerabilityMap.put(c, 0);
             functionUseDef.put(c, innerMap);
         });
-        getVulnerablePosition();
+        //getVulnerablePosition();
     }
 
 
@@ -295,7 +428,7 @@ public class AdaptedUseDefinitionChain {
         String format = "   ";
         Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
         String functions = functionSet.stream().collect(Collectors.joining(format));
-        functions = "PROJECT_NAME"+format+"Node"+format+NULL_POINTER_VUL+format+functions;
+        functions = "PROJECT_NAME"+format+"Node"+format+ VULNERABLE +format+functions;
         // functions = functions+format+NULL_POINTER_VUL;
         String[] header = functions.split(format);
         data.add(header);
@@ -326,7 +459,7 @@ public class AdaptedUseDefinitionChain {
         String format = "   ";
         Set<ControlFlowNode> controlFlowNodes = reachingDefinition.getGraph().vertexSet();
         String functions = functionSet.stream().collect(Collectors.joining(format));
-        functions = "FILE_NAME"+format+"LINE_NUMBER"+format+"Node"+format+NULL_POINTER_VUL+format+functions;
+        functions = "FILE_NAME"+format+"LINE_NUMBER"+format+"NODE"+format+ VULNERABLE+format+"TAINTED"+format+functions;
         // functions = functions+format+NULL_POINTER_VUL;
         String[] header = functions.split(format);
         data.add(header);
@@ -342,9 +475,10 @@ public class AdaptedUseDefinitionChain {
             }
             Map<String, Integer> innerMap = functionUseDef.get(flowNode);
             Integer vulValue = vulnerabilityMap.get(flowNode);
+            Integer tainted = taintedLines.get(flowNode);
             String form = ";   ";
             int lineNumber = flowNode.getStatement().getPosition().getLine();
-            String line[] = {fileName+form+lineNumber+form+flowNode.getId()+form+vulValue};
+            String line[] = {fileName+form+lineNumber+form+flowNode.getId()+form+vulValue+form+tainted};
             for (Map.Entry<String, Integer> entry : innerMap.entrySet()) {
                 Integer value = entry.getValue();
                 line[0] = line[0]+form+value;
