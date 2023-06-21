@@ -5,24 +5,20 @@ import fr.inria.controlflow.ControlFlowBuilder;
 import fr.inria.controlflow.ControlFlowGraph;
 import fr.inria.controlflow.NaiveExceptionControlFlowStrategy;
 import org.apache.commons.io.IOUtils;
+import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation.*;
 import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.utils.CsvUtil;
-import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation.ReachingDefinition;
-import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation.UseDefinitionChain;
 import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.samate.utils.Location2;
 import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.samate.utils.Root;
 import spoon.Launcher;
+import spoon.reflect.CtModel;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtMethod;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SamateDataset implements IDataSet {
 
@@ -120,10 +116,11 @@ public class SamateDataset implements IDataSet {
     private void transformFiles(){
 
         InputStream inputStream = null;
-        String fileName = "samate-"+vulType+"-dataset.csv";
+        String datasetFileName = "samate-"+vulType+"-dataset.csv";
         try {
             List<List<String>> listaMatrizes = forEachProject2(projectList);
-            CsvUtil.criarUnicaMatriz(listaMatrizes, fileName);
+            CsvUtil.createDataset(listaMatrizes, datasetFileName);
+            //CsvUtil.printDataset(listaMatrizes);
 
         }catch (Exception e){
             e.printStackTrace();
@@ -139,6 +136,47 @@ public class SamateDataset implements IDataSet {
         }
     }
 
+    private   List<CtElement> getMethodsFromProject(String uri){
+//        Launcher launcher = new Launcher();
+//        //55165-v1.0.0
+//        //String project =  projectName //"55165-v1.0.0";
+//        //String val =  "E:\\TFM\\SAMATE-DATA\\"+project;
+//        launcher.addInputResource(projectDirectory+"/src/main/java");
+//        launcher.getEnvironment().setNoClasspath(true);
+//        CtModel model = launcher.buildModel();
+//        return  model.getElements(el -> el instanceof CtMethod)
+//                .stream()
+//                .map(ctEl -> (CtMethod)ctEl)
+//                .filter(method -> method.getBody() !=null)
+//                .filter(method -> method.getSimpleName().contains("bad"))
+//                .collect(Collectors.toList());
+
+        FileInputStream vulFile = null;
+        try {
+            vulFile = new FileInputStream(uri);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String content = null;
+        try {
+            content = IOUtils.toString(vulFile, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return
+                Launcher
+                        .parseClass(content)
+                        .getElements(el -> el instanceof CtMethod)
+                        .stream()
+                        .map(ctEl -> (CtMethod)ctEl)
+                        .filter(ctMethod -> /**ctMethod.getSimpleName().startsWith("good") ||**/
+                                ctMethod.getSimpleName().startsWith("bad") ||
+                                        ctMethod.getSimpleName().contains("bad")  )
+                        .filter(ctMethod -> ctMethod.getBody() != null)
+                        .collect(Collectors.toList());
+
+    }
 
     private List<List<String>> forEachProject2(List<String> projectList) throws IOException {
         List<List<String>> listaMatrizes = new ArrayList<>();
@@ -158,119 +196,48 @@ public class SamateDataset implements IDataSet {
         return listaMatrizes;
     }
 
-    private void forEachVulnerableLocation(List<List<String>> listaMatrizes, String project, Root root) {
+    private void forEachVulnerableLocation(List<List<String>> listaMatrizes, String project, Root root) throws IOException {
         Map<String, List<Location2>> collect = root.getRuns().get(0).getResults()
                 .get(0).getLocations().stream()
-                .collect(Collectors.groupingBy(loc -> loc.getPhysicalLocation().getArtifactLocation().getUri()));
-        for(Map.Entry<String, List<Location2>> entry : collect.entrySet()){
+                .collect(Collectors.groupingBy(loc -> new File(loc.getPhysicalLocation().getArtifactLocation().getUri()).getName()));
 
-            String uri = samateProjectDirectory +project+"/"+entry.getKey();
-                List<Integer> vulnerableLines = entry.getValue().stream()
-                    .map(loc -> loc.getPhysicalLocation().getRegion().getStartLine()).collect(Collectors.toList());
-            //int startLine = location.getPhysicalLocation().getRegion().getStartLine();
+        Map<String, List<Integer>> vulnerabilityMap = collect
+                .entrySet()
+                .stream()
+                .collect(Collectors.toConcurrentMap(
+                        Map.Entry::getKey,
+                        list -> list.getValue()
+                                .stream()
+                                .map(loc -> loc.getPhysicalLocation().getRegion().getStartLine())
+                                .collect(Collectors.toList())
+                ));
+        String uri = samateProjectDirectory +project;
 
-            FileInputStream vulFile = null;
-            try {
-                vulFile = new FileInputStream(uri);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            String content = null;
-            try {
-                content = IOUtils.toString(vulFile, "UTF-8");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        List<CtElement> methodList = Transform.filterMethodByName(uri, Set.of("bad", "good"));
+        methodList.forEach(ctElem -> {
 
-            List<CtElement> ctElement =
-                    Launcher
-                            .parseClass(content)
-                            .getElements(el -> el instanceof CtMethod)
-                            .stream()
-                            .map(ctEl -> (CtMethod)ctEl)
-                            .filter(ctMethod -> /**ctMethod.getSimpleName().startsWith("good") ||**/
-                                    ctMethod.getSimpleName().startsWith("bad") ||
-                                            ctMethod.getSimpleName().contains("bad")  )
-                            .filter(ctMethod -> ctMethod.getBody() != null)
-                            .collect(Collectors.toList());
+            ControlFlowBuilder builder = new ControlFlowBuilder();
 
+            EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
+            options = EnumSet.of(NaiveExceptionControlFlowStrategy.Options.ReturnWithoutFinalizers);
+            builder.setExceptionControlFlowStrategy(new NaiveExceptionControlFlowStrategy(options));
 
-            ctElement.forEach(ctElem -> {
+            ControlFlowGraph graph =
+                    builder.build(ctElem);
+            graph.simplifyBlockNodes();
+            graph.simplify();
+            //System.out.println(graph.toGraphVisText());
+            ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
+            //UseDefinitionChain useDefinition = new UseDefinitionChain(rd, vulnerableLines);
+            UseDefinition useDefinition = new UseDefinition(rd);
+            String projectMethodName = project+"/src/main/java/"+ctElem.getPosition().getFile().getName();
+            FeaturesExtraction featuresExtraction = new FeaturesExtraction(rd, useDefinition, projectMethodName, vulnerabilityMap);
+            featuresExtraction.executeExtraction();
+            List<String> transform =
+                    featuresExtraction.getResultExtraction();
+            listaMatrizes.add(transform);
 
-                ControlFlowBuilder builder = new ControlFlowBuilder();
-
-                EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
-                options = EnumSet.of(NaiveExceptionControlFlowStrategy.Options.ReturnWithoutFinalizers);
-                builder.setExceptionControlFlowStrategy(new NaiveExceptionControlFlowStrategy(options));
-
-                ControlFlowGraph graph =
-                        builder.build(ctElem);
-                graph.simplifyBlockNodes();
-                graph.simplify();
-                System.out.println(graph.toGraphVisText());
-                ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
-                UseDefinitionChain useDefinition = new UseDefinitionChain(rd, vulnerableLines);
-                String projectMethodName = project + "-" + ((CtMethod) ctElem).getSimpleName();
-                List<String> transform =
-                        useDefinition.transformFile(projectMethodName);
-                listaMatrizes.add(transform);
-
-            });
-        }
-//        root.getRuns().get(0).getResults()
-//                .get(0).getLocations()
-//                .forEach(location -> {
-//                    String uri = samateProjectDirectory +project+"/"+location.getPhysicalLocation().getArtifactLocation().getUri();
-//                    int startLine = location.getPhysicalLocation().getRegion().getStartLine();
-//
-//                    FileInputStream vulFile = null;
-//                    try {
-//                        vulFile = new FileInputStream(uri);
-//                    } catch (FileNotFoundException e) {
-//                        e.printStackTrace();
-//                    }
-//                    String content = null;
-//                    try {
-//                        content = IOUtils.toString(vulFile, "UTF-8");
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                    List<CtElement> ctElement =
-//                            Launcher
-//                                    .parseClass(content)
-//                                    .getElements(el -> el instanceof CtMethod)
-//                                    .stream()
-//                                    .map(ctEl -> (CtMethod)ctEl)
-//                                    .filter(ctMethod -> /**ctMethod.getSimpleName().startsWith("good") ||**/
-//                                            ctMethod.getSimpleName().startsWith("bad") ||
-//                                            ctMethod.getSimpleName().contains("bad")  )
-//                                    .filter(ctMethod -> ctMethod.getBody() != null)
-//                                    .collect(Collectors.toList());
-//
-//                    ControlFlowBuilder builder = new ControlFlowBuilder();
-//
-//                    EnumSet<NaiveExceptionControlFlowStrategy.Options> options;
-//                    options = EnumSet.of(NaiveExceptionControlFlowStrategy.Options.ReturnWithoutFinalizers);
-//                    builder.setExceptionControlFlowStrategy(new NaiveExceptionControlFlowStrategy(options));
-//
-//                    ctElement.forEach(ctElem -> {
-//
-//                        ControlFlowGraph graph =
-//                                builder.build(ctElem);
-//                        graph.simplifyBlockNodes();
-//                        graph.simplify();
-//                        //System.out.println(graph.toGraphVisText());
-//                        ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
-//                        UseDefinitionChain useDefinition = new UseDefinitionChain(rd, startLine);
-//                        String projectMethodName = project + "-" + ((CtMethod) ctElem).getSimpleName();
-//                        List<String> transform =
-//                                useDefinition.transformFile(projectMethodName);
-//                        listaMatrizes.add(transform);
-//
-//                    });
-//
-//                });
+        });
     }
 
 

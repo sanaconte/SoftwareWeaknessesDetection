@@ -1,13 +1,16 @@
 package pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.transformation;
 
+import fr.inria.controlflow.BranchKind;
 import fr.inria.controlflow.ControlFlowNode;
 import org.apache.commons.collections4.list.TreeList;
 import spoon.reflect.code.*;
 import spoon.reflect.cu.SourcePosition;
 import spoon.reflect.declaration.CtElement;
+import spoon.reflect.declaration.CtVariable;
+import spoon.reflect.path.CtRole;
 import spoon.reflect.reference.CtVariableReference;
+import spoon.support.reflect.code.CtLocalVariableImpl;
 
-import java.security.PrivateKey;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,6 +19,7 @@ import java.util.stream.Collectors;
 public class FeaturesExtraction {
 
     private static final String VULNERABLE = "VULNERABLE";
+    private final UseDefinition useDefinition;
 
     private ReachingDefinition reachingDefinition;
 
@@ -27,8 +31,9 @@ public class FeaturesExtraction {
 
     private List<ControlFlowNode> extractedNodes;
 
-    public FeaturesExtraction(ReachingDefinition reachingDefinition, String fileName, Map<String, List<Integer>> vulnerabilityMap) {
+    public FeaturesExtraction(ReachingDefinition reachingDefinition, UseDefinition useDefinition, String fileName, Map<String, List<Integer>> vulnerabilityMap) {
         this.reachingDefinition = reachingDefinition;
+        this.useDefinition = useDefinition;
         this.fileName = fileName;
         this.vulnerabilityMap = vulnerabilityMap;
         initiateLists();
@@ -47,11 +52,16 @@ public class FeaturesExtraction {
     }
 
     private  void makeExtraction(){
-        reachingDefinition.getGraph()
-                .statements()
-                .stream()
-                .filter(node -> isInstanceOfCtInvocation(node))
-                .forEach(node -> forEachNode(node));
+//        useDefinition.getUseFunctionNodes()
+//       // reachingDefinition.getGraph()
+//         //       .statements()
+//                .stream()
+//                .filter(node -> isInstanceOfCtInvocation(node))
+//                .forEach(node -> forEachNode(node));
+        //System.out.println(useDefinition.getFunctionUseDefinition());
+        useDefinition
+                .getFunctionUseDefinition()
+                .forEach((key, value) -> forEachInvocation(key, value));
     }
 
     private void forEachNode(ControlFlowNode node) {
@@ -70,12 +80,29 @@ public class FeaturesExtraction {
         }
     }
 
+    private void forEachInvocation(ControlFlowNode key, CtElement value){
+        CtElement element = value;
+        if(element instanceof CtInvocation) {
+            CtInvocation ctInvocation = (CtInvocation) element;
+            String funcName = ctInvocation.getExecutable().getSimpleName() + "()";
+            List<CtExpression<?>> arguments = ctInvocation.getArguments();
+            processNode(key, funcName, arguments);
+        }
+        else if(element instanceof CtConstructorCall){
+            CtConstructorCall ctConstructorCall = (CtConstructorCall) element;
+            String funcName = ctConstructorCall.getExecutable().prettyprint().split("\\(")[0]+"()";
+            List<CtExpression<?>> arguments = ctConstructorCall.getArguments();
+            processNode(key, funcName, arguments);
+        }
+    }
+
     private void processNode(ControlFlowNode node, String funcName, List<CtExpression<?>> arguments) {
         if (!arguments.isEmpty()) {
             String valueArguments = arguments
                     .stream()
                     .map(expression -> treatExpression(expression))
-                    .collect(Collectors.joining(", "));
+                    .collect(Collectors.joining(" "));
+            valueArguments = valueArguments.replace(",", "");
             funcFeature.put(node, funcName);
             varFeature.put(node, valueArguments);
             extractedNodes.add(node);
@@ -85,7 +112,8 @@ public class FeaturesExtraction {
 
     private void processVulnerability(ControlFlowNode node) {
         SourcePosition position = node.getStatement().getPosition();
-        //System.out.println("fileName: "+ node.getStatement().getPosition().getFile().getName());
+        System.out.println("fileName: "+ node.getStatement().getPosition().getFile().getName());
+        System.out.println("vulnerabilityMap: "+vulnerabilityMap);
         List<Integer> lines = vulnerabilityMap.get(position.getFile().getName());
         boolean contains = lines != null && lines.contains(position.getLine());
 //        boolean anyMatch = vulnerabilityMap
@@ -114,14 +142,18 @@ public class FeaturesExtraction {
         }
         else if(expression instanceof CtConstructorCall){
             return treatCtConstructorCall((CtConstructorCall)expression);
+        }else if(expression instanceof  CtAssignment){
+            CtAssignment ctAssignment = (CtAssignment) expression;
+            return treatExpression(ctAssignment.getAssignment());
         }
         else {
-            return "Not valid";
+            return "";
         }
     }
 
     private String treatCtInvocation(CtInvocation ctInvocation){
-       return ctInvocation.prettyprint();
+       return ctInvocation.getExecutable().getSimpleName()+"()";
+       //return ctInvocation.prettyprint();
     }
 
     private String treatCtConstructorCall(CtConstructorCall ctConstructorCall){
@@ -132,39 +164,72 @@ public class FeaturesExtraction {
         CtExpression<?> leftHandOperand = binaryOperator.getLeftHandOperand();
         CtExpression<?> rightHandOperand = binaryOperator.getRightHandOperand();
 
-        return  treatExpression(leftHandOperand) + "+" +
-                treatExpression(rightHandOperand);
-//        if(leftHandOperand instanceof CtVariableAccess &&
-//                rightHandOperand instanceof CtVariableAccess) {
-//            return  treatExpression(leftHandOperand) + " " +
-//                    treatExpression(rightHandOperand);
-//        }
-//        else if(rightHandOperand instanceof CtVariableAccess &&
-//                !(leftHandOperand instanceof CtVariableAccess)) {
-//            return treatExpression(rightHandOperand);
-//        }
-//        else if(!(rightHandOperand instanceof CtVariableAccess) &&
-//                (leftHandOperand instanceof CtVariableAccess)) {
-//            return treatExpression(leftHandOperand);
-//        }
-//        else {
-//            return rightHandOperand.prettyprint() + " " + leftHandOperand;
-//        }
+        String left = treatExpression(leftHandOperand);
+        String  right = treatExpression(rightHandOperand);
+        boolean isLeft = left!=null&&!left.isBlank();
+        boolean isRight = right!=null&&!right.isBlank();
+        if(isLeft&&isRight){
+            return left+" "+right;
+        }
+        else if(isLeft&& !isRight){
+            return left;
+        }else if(!isLeft&&isRight){
+            return right;
+        }else {
+            return "";
+        }
+
+    }
+
+    private ControlFlowNode getNodeFromDefinition(String def){
+        int id = Integer.parseInt(def.split(":")[1]);
+        return reachingDefinition.getGraph().findNodeById(id);
     }
 
     private String getVariableOrigenValue(CtVariableAccess ctVariableAccess){
-        CtVariableReference variable = ctVariableAccess.getVariable();
-        if(variable.getDeclaration() != null ){
-            return treatExpression(variable.getDeclaration().getDefaultExpression());
-        }else {
-            return variable.prettyprint();
-        }
+        //return ""+ctVariableAccess.getVariable().prettyprint();
+        String varName = ctVariableAccess.getVariable().getSimpleName();
+        OptionalInt max = useDefinition
+                .getUseDefinitionChain()
+                .keySet()
+                .stream().filter(use -> use.split(":")[0].equals(varName))
+                .flatMap(use -> useDefinition.getUseDefinitionChain().get(use).stream())
+                .mapToInt(def -> Integer.parseInt(def.split(":")[1]))
+                .min();
 
-//            return variable
-//                    .getDeclaration()
-//                    .getDefaultExpression()
-//                    .prettyprint();
+        if(!max.isEmpty()){
+            ControlFlowNode nodeById = reachingDefinition.getGraph().findNodeById(max.getAsInt());
+            if(nodeById!= null && nodeById.getStatement()!=null){
+                CtElement ctElement = nodeById.getStatement();
+                return treatCtElement(ctElement);
+                //return treatExpression((CtExpression<?>) nodeById.getStatement());
+                //return ctAssignment.getAssignment().prettyprint();
+                //return nodeById.getStatement().prettyprint();
+            }
+        }
+        return   "";
     }
+
+    private String treatCtElement(CtElement ctElement){
+        if(ctElement instanceof CtAssignment){
+            CtAssignment ctAssignment = (CtAssignment) ctElement;
+            if(ctAssignment.getAssignment() instanceof CtInvocation)
+                return treatCtInvocation((CtInvocation)ctAssignment.getAssignment());
+            return  ctAssignment.getAssignment().prettyprint();
+        }else if(ctElement instanceof CtLocalVariableImpl){
+            CtLocalVariableImpl ctLocalVariable = (CtLocalVariableImpl) ctElement;
+            if(ctLocalVariable.getAssignment() instanceof CtInvocation)
+                return treatCtInvocation((CtInvocation)ctLocalVariable.getAssignment());
+            return ctLocalVariable.getAssignment().prettyprint();
+        }else if(ctElement instanceof CtLocalVariable){
+            CtLocalVariable ctLocalVariable = (CtLocalVariable) ctElement;
+            if(ctLocalVariable.getAssignment() instanceof CtInvocation)
+                return treatCtInvocation((CtInvocation)ctLocalVariable.getAssignment());
+            return ctLocalVariable.getAssignment().prettyprint();
+        }
+        return ctElement.prettyprint();
+    }
+
     private String getLiteralValue(CtLiteral literal){
         return literal.prettyprint();
     }

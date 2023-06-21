@@ -1,0 +1,1030 @@
+FILE_NAME,LINE_NUMBER,NODE,Func,Var,VULNERABLE
+58918-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,133,102,exec(),"{""/bin/ls ""+""foo""}",0
+58918-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,238,206,exec(),"{""/bin/ls ""+""foo""}",0
+58918-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,344,310,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58919-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_03.java,133,420,exec(),"{""/bin/ls ""+""foo""}",0
+58919-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_03.java,238,524,exec(),"{""/bin/ls ""+""foo""}",0
+58919-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_03.java,344,628,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58920-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_04.java,139,738,exec(),"{""/bin/ls ""+""foo""}",0
+58920-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_04.java,244,842,exec(),"{""/bin/ls ""+""foo""}",0
+58920-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_04.java,350,946,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58921-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_05.java,139,1056,exec(),"{""/bin/ls ""+""foo""}",0
+58921-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_05.java,244,1160,exec(),"{""/bin/ls ""+""foo""}",0
+58921-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_05.java,350,1264,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58922-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_06.java,138,1374,exec(),"{""/bin/ls ""+""foo""}",0
+58922-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_06.java,243,1478,exec(),"{""/bin/ls ""+""foo""}",0
+58922-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_06.java,349,1582,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58923-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_07.java,138,1692,exec(),"{""/bin/ls ""+""foo""}",0
+58923-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_07.java,243,1796,exec(),"{""/bin/ls ""+""foo""}",0
+58923-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_07.java,349,1900,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58925-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_09.java,133,2010,exec(),"{""/bin/ls ""+""foo""}",0
+58925-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_09.java,238,2114,exec(),"{""/bin/ls ""+""foo""}",0
+58925-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_09.java,344,2218,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58926-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_10.java,133,2328,exec(),"{""/bin/ls ""+""foo""}",0
+58926-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_10.java,238,2432,exec(),"{""/bin/ls ""+""foo""}",0
+58926-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_10.java,344,2536,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58928-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_12.java,132,2646,exec(),"{""/bin/ls ""+""foo""}",0
+58928-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_12.java,170,2672,exec(),"{""/bin/ls ""+""foo""}",0
+58929-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_13.java,133,2781,exec(),"{""/bin/ls ""+""foo""}",0
+58929-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_13.java,238,2885,exec(),"{""/bin/ls ""+""foo""}",0
+58929-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_13.java,344,2989,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58930-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_14.java,133,3099,exec(),"{""/bin/ls ""+""foo""}",0
+58930-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_14.java,238,3203,exec(),"{""/bin/ls ""+""foo""}",0
+58930-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_14.java,344,3307,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58931-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_15.java,136,3425,exec(),"{""/bin/ls ""+""foo""}",0
+58931-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_15.java,244,3537,exec(),"{""/bin/ls ""+""foo""}",0
+58931-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_15.java,352,3649,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58932-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_16.java,138,3763,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58932-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_16.java,246,3872,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58933-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_17.java,135,3981,exec(),"{""/bin/ls ""+""foo""}",0
+58933-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_17.java,239,4085,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58935-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_31.java,132,4192,exec(),"{""/bin/ls ""+data_copy}",0
+58935-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_31.java,173,4222,exec(),"{""/bin/ls ""+data_copy}",0
+58936-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_41.java,49,4238,exec(),"{""/bin/ls ""+}",0
+58936-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_41.java,131,4325,bad_sink(),{buffread.readLine()},0
+58936-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_41.java,155,4344,exec(),"{""/bin/ls ""+}",0
+58936-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_41.java,170,4353,goodG2B_sink(),"{""foo""}",0
+58939-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_51a.java,110,4439,bad_sink(),{buffread.readLine()},0
+58939-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_51a.java,128,4452,goodG2B_sink(),"{""foo""}",0
+58939-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_51b.java,41,4466,exec(),"{""/bin/ls ""+}",0
+58939-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_51b.java,63,4481,exec(),"{""/bin/ls ""+}",0
+58940-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_52a.java,111,4568,bad_sink(),{buffread.readLine()},0
+58940-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_52a.java,129,4581,goodG2B_sink(),"{""foo""}",0
+58940-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_52c.java,42,4605,exec(),"{""/bin/ls ""+}",0
+58940-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_52c.java,64,4620,exec(),"{""/bin/ls ""+}",0
+58942-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_53a.java,111,4707,bad_sink(),{buffread.readLine()},0
+58942-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_53a.java,129,4720,goodG2B_sink(),"{""foo""}",0
+58942-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_53d.java,42,4754,exec(),"{""/bin/ls ""+}",0
+58942-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_53d.java,64,4769,exec(),"{""/bin/ls ""+}",0
+58943-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_54a.java,111,4856,bad_sink(),{buffread.readLine()},0
+58943-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_54a.java,129,4869,goodG2B_sink(),"{""foo""}",0
+58943-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_54e.java,42,4913,exec(),"{""/bin/ls ""+}",0
+58943-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_54e.java,64,4928,exec(),"{""/bin/ls ""+}",0
+58944-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_61a.java,43,4944,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__listen_tcp_61b().bad_source()}",0
+58944-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_61a.java,71,4965,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__listen_tcp_61b().goodG2B_source()}",0
+58946-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_67a.java,118,5148,bad_sink(),{new Container()},0
+58946-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_67a.java,138,5163,goodG2B_sink(),{new Container()},0
+58946-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_67b.java,43,5178,exec(),"{""/bin/ls ""+data_container.a}",0
+58946-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_67b.java,66,5194,exec(),"{""/bin/ls ""+data_container.a}",0
+58947-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_68b.java,44,5307,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__listen_tcp_68a.data}",0
+58947-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_68b.java,67,5323,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__listen_tcp_68a.data}",0
+58948-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_71a.java,111,5410,bad_sink(),{buffread.readLine()},0
+58948-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_71a.java,129,5423,goodG2B_sink(),"{""foo""}",0
+58948-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_71b.java,43,5438,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58948-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_71b.java,66,5454,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,109,5534,exec(),"{""/bin/ls ""+""foo""}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,190,5614,exec(),"{""/bin/ls ""+""foo""}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,271,5694,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_16.java,111,5776,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_16.java,192,5853,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_17.java,107,5930,exec(),"{""/bin/ls ""+""foo""}",0
+58677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_17.java,184,6002,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_31.java,104,6077,exec(),"{""/bin/ls ""+data_copy}",0
+58679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_31.java,145,6107,exec(),"{""/bin/ls ""+data_copy}",0
+58680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_41.java,49,6123,exec(),"{""/bin/ls ""+}",0
+58680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_41.java,103,6178,bad_sink(),{buffread.readLine()},0
+58680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_41.java,127,6197,exec(),"{""/bin/ls ""+}",0
+58680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_41.java,142,6206,goodG2B_sink(),"{""foo""}",0
+58681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_42.java,103,6275,exec(),"{""/bin/ls ""+bad_source()}",0
+58681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_42.java,138,6299,exec(),"{""/bin/ls ""+goodG2B_source()}",0
+58682-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_45.java,54,6320,exec(),"{""/bin/ls ""+bad_data}",0
+58682-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_45.java,135,6396,exec(),"{""/bin/ls ""+goodG2B_data}",0
+58683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_51a.java,82,6460,bad_sink(),{buffread.readLine()},0
+58683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_51a.java,100,6473,goodG2B_sink(),"{""foo""}",0
+58683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_51b.java,41,6487,exec(),"{""/bin/ls ""+}",0
+58683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_51b.java,63,6502,exec(),"{""/bin/ls ""+}",0
+58684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_52a.java,83,6557,bad_sink(),{buffread.readLine()},0
+58684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_52a.java,101,6570,goodG2B_sink(),"{""foo""}",0
+58684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_52c.java,42,6594,exec(),"{""/bin/ls ""+}",0
+58684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_52c.java,64,6609,exec(),"{""/bin/ls ""+}",0
+58686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_53a.java,83,6664,bad_sink(),{buffread.readLine()},0
+58686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_53a.java,101,6677,goodG2B_sink(),"{""foo""}",0
+58686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_53d.java,42,6711,exec(),"{""/bin/ls ""+}",0
+58686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_53d.java,64,6726,exec(),"{""/bin/ls ""+}",0
+58688-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_61a.java,43,6742,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__URLConnection_61b().bad_source()}",0
+58688-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_61a.java,71,6763,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__URLConnection_61b().goodG2B_source()}",0
+58689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_66a.java,85,6882,bad_sink(),{new String[5]},0
+58689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_66a.java,105,6897,goodG2B_sink(),{new String[5]},0
+58689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_66b.java,43,6912,exec(),"{""/bin/ls ""+data_array[2]}",0
+58689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_66b.java,66,6928,exec(),"{""/bin/ls ""+data_array[2]}",0
+58690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_67a.java,90,6985,bad_sink(),{new Container()},0
+58690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_67a.java,110,7000,goodG2B_sink(),{new Container()},0
+58690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_67b.java,43,7015,exec(),"{""/bin/ls ""+data_container.a}",0
+58690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_67b.java,66,7031,exec(),"{""/bin/ls ""+data_container.a}",0
+58691-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_68b.java,44,7112,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__URLConnection_68a.data}",0
+58691-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_68b.java,67,7128,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__URLConnection_68a.data}",0
+58692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_71a.java,83,7183,bad_sink(),{buffread.readLine()},0
+58692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_71a.java,101,7196,goodG2B_sink(),"{""foo""}",0
+58692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_71b.java,43,7211,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_71b.java,66,7227,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58693-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_01.java,109,7305,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58693-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_01.java,142,7328,exec(),"{""/bin/ls ""+""foo""}",0
+58694-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_02.java,118,7414,exec(),"{""/bin/ls ""+""foo""}",0
+58694-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_02.java,209,7500,exec(),"{""/bin/ls ""+""foo""}",0
+58694-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_02.java,301,7586,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_04.java,124,7678,exec(),"{""/bin/ls ""+""foo""}",0
+58696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_04.java,215,7764,exec(),"{""/bin/ls ""+""foo""}",0
+58696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_04.java,307,7850,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_05.java,124,7942,exec(),"{""/bin/ls ""+""foo""}",0
+58697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_05.java,215,8028,exec(),"{""/bin/ls ""+""foo""}",0
+58697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_05.java,307,8114,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58699-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_07.java,123,8206,exec(),"{""/bin/ls ""+""foo""}",0
+58699-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_07.java,214,8292,exec(),"{""/bin/ls ""+""foo""}",0
+58699-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_07.java,306,8378,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_08.java,131,8470,exec(),"{""/bin/ls ""+""foo""}",0
+58700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_08.java,222,8556,exec(),"{""/bin/ls ""+""foo""}",0
+58700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_08.java,314,8642,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_09.java,118,8734,exec(),"{""/bin/ls ""+""foo""}",0
+58701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_09.java,209,8820,exec(),"{""/bin/ls ""+""foo""}",0
+58701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_09.java,301,8906,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58702-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_10.java,118,8998,exec(),"{""/bin/ls ""+""foo""}",0
+58702-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_10.java,209,9084,exec(),"{""/bin/ls ""+""foo""}",0
+58702-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_10.java,301,9170,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58704-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_12.java,117,9262,exec(),"{""/bin/ls ""+""foo""}",0
+58704-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_12.java,155,9288,exec(),"{""/bin/ls ""+""foo""}",0
+58705-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_13.java,118,9379,exec(),"{""/bin/ls ""+""foo""}",0
+58705-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_13.java,209,9465,exec(),"{""/bin/ls ""+""foo""}",0
+58705-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_13.java,301,9551,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_14.java,118,9643,exec(),"{""/bin/ls ""+""foo""}",0
+58706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_14.java,209,9729,exec(),"{""/bin/ls ""+""foo""}",0
+58706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_14.java,301,9815,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_15.java,121,9915,exec(),"{""/bin/ls ""+""foo""}",0
+58707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_15.java,215,10009,exec(),"{""/bin/ls ""+""foo""}",0
+58707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_15.java,309,10103,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_16.java,123,10199,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_16.java,217,10290,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_17.java,120,10381,exec(),"{""/bin/ls ""+""foo""}",0
+58709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_17.java,210,10467,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,140,10571,exec(),"{""/bin/ls ""+""foo""}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,110,10551,exec(),"{""/bin/ls ""+""foo""}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,254,10671,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,170,10591,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_31.java,117,10761,exec(),"{""/bin/ls ""+data_copy}",0
+58711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_31.java,158,10791,exec(),"{""/bin/ls ""+data_copy}",0
+58712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_41.java,48,10807,exec(),"{""/bin/ls ""+}",0
+58712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_41.java,116,10876,bad_sink(),{buffread.readLine()},0
+58712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_41.java,140,10895,exec(),"{""/bin/ls ""+}",0
+58712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_41.java,155,10904,goodG2B_sink(),"{""foo""}",0
+58714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_45.java,53,10919,exec(),"{""/bin/ls ""+bad_data}",0
+58714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_45.java,148,11009,exec(),"{""/bin/ls ""+goodG2B_data}",0
+58716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52a.java,96,11087,bad_sink(),{buffread.readLine()},0
+58716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52a.java,114,11100,goodG2B_sink(),"{""foo""}",0
+58716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52c.java,42,11124,exec(),"{""/bin/ls ""+}",0
+58716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52c.java,64,11139,exec(),"{""/bin/ls ""+}",0
+58717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52a.java,96,11208,bad_sink(),{buffread.readLine()},0
+58717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52a.java,114,11221,goodG2B_sink(),"{""foo""}",0
+58717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52c.java,42,11245,exec(),"{""/bin/ls ""+}",0
+58717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_52c.java,64,11260,exec(),"{""/bin/ls ""+}",0
+58718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_53a.java,96,11329,bad_sink(),{buffread.readLine()},0
+58718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_53a.java,114,11342,goodG2B_sink(),"{""foo""}",0
+58718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_53d.java,42,11376,exec(),"{""/bin/ls ""+}",0
+58718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_53d.java,64,11391,exec(),"{""/bin/ls ""+}",0
+58719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_54a.java,96,11460,bad_sink(),{buffread.readLine()},0
+58719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_54a.java,114,11473,goodG2B_sink(),"{""foo""}",0
+58719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_54e.java,42,11517,exec(),"{""/bin/ls ""+}",0
+58719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_54e.java,64,11532,exec(),"{""/bin/ls ""+}",0
+58720-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_61a.java,43,11548,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__connect_tcp_61b().bad_source()}",0
+58720-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_61a.java,71,11569,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__connect_tcp_61b().goodG2B_source()}",0
+58723-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_68b.java,44,11740,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__connect_tcp_68a.data}",0
+58723-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_68b.java,67,11756,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__connect_tcp_68a.data}",0
+58725-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_01.java,91,11819,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58725-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_01.java,124,11842,exec(),"{""/bin/ls ""+""foo""}",0
+58727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_03.java,102,11913,exec(),"{""/bin/ls ""+""foo""}",0
+58727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_03.java,178,11984,exec(),"{""/bin/ls ""+""foo""}",0
+58727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_03.java,253,12055,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_05.java,108,12132,exec(),"{""/bin/ls ""+""foo""}",0
+58729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_05.java,184,12203,exec(),"{""/bin/ls ""+""foo""}",0
+58729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_05.java,259,12274,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_06.java,107,12351,exec(),"{""/bin/ls ""+""foo""}",0
+58730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_06.java,183,12422,exec(),"{""/bin/ls ""+""foo""}",0
+58730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_06.java,258,12493,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58731-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_07.java,107,12570,exec(),"{""/bin/ls ""+""foo""}",0
+58731-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_07.java,183,12641,exec(),"{""/bin/ls ""+""foo""}",0
+58731-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_07.java,258,12712,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_08.java,115,12789,exec(),"{""/bin/ls ""+""foo""}",0
+58732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_08.java,191,12860,exec(),"{""/bin/ls ""+""foo""}",0
+58732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_08.java,266,12931,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_09.java,102,13008,exec(),"{""/bin/ls ""+""foo""}",0
+58733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_09.java,178,13079,exec(),"{""/bin/ls ""+""foo""}",0
+58733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_09.java,253,13150,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_10.java,102,13227,exec(),"{""/bin/ls ""+""foo""}",0
+58734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_10.java,178,13298,exec(),"{""/bin/ls ""+""foo""}",0
+58734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_10.java,253,13369,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58735-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_11.java,102,13446,exec(),"{""/bin/ls ""+""foo""}",0
+58735-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_11.java,178,13517,exec(),"{""/bin/ls ""+""foo""}",0
+58735-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_11.java,253,13588,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58736-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_12.java,101,13665,exec(),"{""/bin/ls ""+""foo""}",0
+58736-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_12.java,139,13691,exec(),"{""/bin/ls ""+""foo""}",0
+58739-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_15.java,105,13775,exec(),"{""/bin/ls ""+""foo""}",0
+58739-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_15.java,184,13854,exec(),"{""/bin/ls ""+""foo""}",0
+58739-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_15.java,263,13933,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_16.java,107,14014,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_16.java,186,14090,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58741-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_17.java,102,14166,exec(),"{""/bin/ls ""+""foo""}",0
+58741-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_17.java,177,14237,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_19.java,92,14306,exec(),"{""/bin/ls ""+""foo""}",0
+58742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_19.java,122,14326,exec(),"{""/bin/ls ""+""foo""}",0
+58742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_19.java,219,14411,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_19.java,152,14346,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_31.java,99,14486,exec(),"{""/bin/ls ""+data_copy}",0
+58743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_31.java,140,14516,exec(),"{""/bin/ls ""+data_copy}",0
+58745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_42.java,98,14586,exec(),"{""/bin/ls ""+bad_source()}",0
+58745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_42.java,133,14610,exec(),"{""/bin/ls ""+goodG2B_source()}",0
+58749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_52a.java,78,14669,bad_sink(),{buffread.readLine()},0
+58749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_52a.java,96,14682,goodG2B_sink(),"{""foo""}",0
+58749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_52c.java,42,14706,exec(),"{""/bin/ls ""+}",0
+58749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_52c.java,64,14721,exec(),"{""/bin/ls ""+}",0
+58750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_53a.java,78,14775,bad_sink(),{buffread.readLine()},0
+58750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_53a.java,96,14788,goodG2B_sink(),"{""foo""}",0
+58750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_53d.java,42,14822,exec(),"{""/bin/ls ""+}",0
+58750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_53d.java,64,14837,exec(),"{""/bin/ls ""+}",0
+58751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_54a.java,78,14891,bad_sink(),{buffread.readLine()},0
+58751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_54a.java,96,14904,goodG2B_sink(),"{""foo""}",0
+58751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_54e.java,42,14948,exec(),"{""/bin/ls ""+}",0
+58751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_54e.java,64,14963,exec(),"{""/bin/ls ""+}",0
+58753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_66a.java,80,15019,bad_sink(),{new String[5]},0
+58753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_66a.java,100,15034,goodG2B_sink(),{new String[5]},0
+58753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_66b.java,43,15049,exec(),"{""/bin/ls ""+data_array[2]}",0
+58753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_66b.java,66,15065,exec(),"{""/bin/ls ""+data_array[2]}",0
+58754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_67a.java,85,15121,bad_sink(),{new Container()},0
+58754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_67a.java,105,15136,goodG2B_sink(),{new Container()},0
+58754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_67b.java,43,15151,exec(),"{""/bin/ls ""+data_container.a}",0
+58754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_67b.java,66,15167,exec(),"{""/bin/ls ""+data_container.a}",0
+58755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_68b.java,44,15247,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__console_readLine_68a.data}",0
+58755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_68b.java,67,15263,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__console_readLine_68a.data}",0
+58756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_71a.java,78,15317,bad_sink(),{buffread.readLine()},0
+58756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_71a.java,96,15330,goodG2B_sink(),"{""foo""}",0
+58756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_71b.java,43,15345,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__console_readLine_71b.java,66,15361,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_01.java,146,15478,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_01.java,62,15386,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_01.java,179,15501,exec(),"{""/bin/ls ""+""foo""}",0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,60,15529,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,154,15626,exec(),"{""/bin/ls ""+""foo""}",0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,277,15751,exec(),"{""/bin/ls ""+""foo""}",0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,184,15654,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,402,15876,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_02.java,316,15783,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,154,16007,exec(),"{""/bin/ls ""+""foo""}",0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,60,15910,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,184,16035,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,277,16132,exec(),"{""/bin/ls ""+""foo""}",0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,402,16257,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58759-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_03.java,316,16164,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,66,16291,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,160,16388,exec(),"{""/bin/ls ""+""foo""}",0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,190,16416,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,283,16513,exec(),"{""/bin/ls ""+""foo""}",0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,408,16638,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58760-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_04.java,322,16545,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,66,16672,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,160,16769,exec(),"{""/bin/ls ""+""foo""}",0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,190,16797,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,283,16894,exec(),"{""/bin/ls ""+""foo""}",0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,322,16926,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58761-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_05.java,408,17019,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,65,17053,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,159,17150,exec(),"{""/bin/ls ""+""foo""}",0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,189,17178,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,282,17275,exec(),"{""/bin/ls ""+""foo""}",0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,321,17307,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58762-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_06.java,407,17400,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,154,17531,exec(),"{""/bin/ls ""+""foo""}",0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,60,17434,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,277,17656,exec(),"{""/bin/ls ""+""foo""}",0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,184,17559,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,402,17781,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58765-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_09.java,316,17688,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,154,17912,exec(),"{""/bin/ls ""+""foo""}",0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,60,17815,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,184,17940,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,277,18037,exec(),"{""/bin/ls ""+""foo""}",0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,402,18162,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58766-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_10.java,316,18069,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,60,18196,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,154,18293,exec(),"{""/bin/ls ""+""foo""}",0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,184,18321,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,277,18418,exec(),"{""/bin/ls ""+""foo""}",0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,402,18543,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58767-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_11.java,316,18450,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58768-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_12.java,60,18577,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58768-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_12.java,153,18674,exec(),"{""/bin/ls ""+""foo""}",0
+58768-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_12.java,191,18700,exec(),"{""/bin/ls ""+""foo""}",0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,60,18733,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,154,18830,exec(),"{""/bin/ls ""+""foo""}",0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,184,18858,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,277,18955,exec(),"{""/bin/ls ""+""foo""}",0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,316,18987,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58770-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_14.java,402,19080,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,157,19219,exec(),"{""/bin/ls ""+""foo""}",0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,62,19116,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,283,19352,exec(),"{""/bin/ls ""+""foo""}",0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,189,19249,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,322,19390,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58771-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_15.java,409,19485,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58773-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_17.java,157,19616,exec(),"{""/bin/ls ""+""foo""}",0
+58773-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_17.java,65,19516,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58773-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_17.java,194,19647,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58773-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_17.java,279,19741,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,63,19772,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,177,19884,exec(),"{""/bin/ls ""+""foo""}",0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,147,19864,exec(),"{""/bin/ls ""+""foo""}",0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,240,19931,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,207,19904,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58774-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_19.java,324,20023,exec(),"{""/bin/ls ""+rs.getString(1)}",0
+58777-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_42.java,61,20054,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58777-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_42.java,153,20152,exec(),"{""/bin/ls ""+bad_source()}",0
+58777-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_42.java,188,20176,exec(),"{""/bin/ls ""+goodG2B_source()}",0
+58778-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_45.java,57,20197,exec(),"{""/bin/ls ""+bad_data}",0
+58778-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_45.java,88,20222,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58778-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_45.java,185,20326,exec(),"{""/bin/ls ""+goodG2B_data}",0
+58779-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_51a.java,132,20443,bad_sink(),{rs.getString(1)},0
+58779-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_51a.java,61,20360,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58779-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_51a.java,150,20456,goodG2B_sink(),"{""foo""}",0
+58779-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_51b.java,41,20470,exec(),"{""/bin/ls ""+}",0
+58779-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_51b.java,63,20485,exec(),"{""/bin/ls ""+}",0
+58780-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,133,20593,bad_sink(),{rs.getString(1)},0
+58780-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,62,20510,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58780-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,151,20606,goodG2B_sink(),"{""foo""}",0
+58780-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52c.java,42,20630,exec(),"{""/bin/ls ""+}",0
+58780-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52c.java,64,20645,exec(),"{""/bin/ls ""+}",0
+58781-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,133,20753,bad_sink(),{rs.getString(1)},0
+58781-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,62,20670,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58781-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52a.java,151,20766,goodG2B_sink(),"{""foo""}",0
+58781-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52c.java,42,20790,exec(),"{""/bin/ls ""+}",0
+58781-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_52c.java,64,20805,exec(),"{""/bin/ls ""+}",0
+58782-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_53a.java,133,20913,bad_sink(),{rs.getString(1)},0
+58782-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_53a.java,62,20830,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58782-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_53a.java,151,20926,goodG2B_sink(),"{""foo""}",0
+58782-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_53d.java,42,20960,exec(),"{""/bin/ls ""+}",0
+58782-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_53d.java,64,20975,exec(),"{""/bin/ls ""+}",0
+58783-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_54a.java,133,21083,bad_sink(),{rs.getString(1)},0
+58783-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_54a.java,62,21000,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58783-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_54a.java,151,21096,goodG2B_sink(),"{""foo""}",0
+58783-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_54e.java,42,21140,exec(),"{""/bin/ls ""+}",0
+58783-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_54e.java,64,21155,exec(),"{""/bin/ls ""+}",0
+58785-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_66a.java,62,21180,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58785-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_66a.java,135,21265,bad_sink(),{new String[5]},0
+58785-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_66a.java,155,21280,goodG2B_sink(),{new String[5]},0
+58785-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_66b.java,43,21295,exec(),"{""/bin/ls ""+data_array[2]}",0
+58785-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_66b.java,66,21311,exec(),"{""/bin/ls ""+data_array[2]}",0
+58786-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_67a.java,140,21421,bad_sink(),{new Container()},0
+58786-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_67a.java,67,21336,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58786-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_67a.java,160,21436,goodG2B_sink(),{new Container()},0
+58786-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_67b.java,43,21451,exec(),"{""/bin/ls ""+data_container.a}",0
+58786-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_67b.java,66,21467,exec(),"{""/bin/ls ""+data_container.a}",0
+58787-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_68a.java,64,21491,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58787-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_68b.java,44,21601,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__fromDB_68a.data}",0
+58787-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_68b.java,67,21617,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__fromDB_68a.data}",0
+58788-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_71a.java,62,21642,setInt(),{1| Integer.parseInt(buffread.readLine())},0
+58788-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_71a.java,133,21725,bad_sink(),{rs.getString(1)},0
+58788-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_71a.java,151,21738,goodG2B_sink(),"{""foo""}",0
+58788-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_71b.java,43,21753,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58788-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromDB_71b.java,66,21769,exec(),"{""/bin/ls ""+((String) (data_obj))}",0
+58789-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_01.java,99,21837,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58789-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_01.java,132,21860,exec(),"{""/bin/ls ""+""foo""}",0
+58790-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_02.java,109,21936,exec(),"{""/bin/ls ""+""foo""}",0
+58790-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_02.java,191,22012,exec(),"{""/bin/ls ""+""foo""}",0
+58790-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_02.java,273,22088,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58791-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_03.java,109,22170,exec(),"{""/bin/ls ""+""foo""}",0
+58791-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_03.java,191,22246,exec(),"{""/bin/ls ""+""foo""}",0
+58791-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_03.java,273,22322,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58793-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_05.java,115,22404,exec(),"{""/bin/ls ""+""foo""}",0
+58793-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_05.java,197,22480,exec(),"{""/bin/ls ""+""foo""}",0
+58793-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_05.java,279,22556,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58794-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_06.java,114,22638,exec(),"{""/bin/ls ""+""foo""}",0
+58794-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_06.java,196,22714,exec(),"{""/bin/ls ""+""foo""}",0
+58794-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_06.java,278,22790,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58795-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_07.java,114,22872,exec(),"{""/bin/ls ""+""foo""}",0
+58795-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_07.java,196,22948,exec(),"{""/bin/ls ""+""foo""}",0
+58795-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_07.java,278,23024,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58800-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_12.java,108,23106,exec(),"{""/bin/ls ""+""foo""}",0
+58800-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_12.java,146,23132,exec(),"{""/bin/ls ""+""foo""}",0
+58801-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_13.java,109,23213,exec(),"{""/bin/ls ""+""foo""}",0
+58801-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_13.java,191,23289,exec(),"{""/bin/ls ""+""foo""}",0
+58801-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_13.java,273,23365,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58802-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_14.java,109,23447,exec(),"{""/bin/ls ""+""foo""}",0
+58802-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_14.java,191,23523,exec(),"{""/bin/ls ""+""foo""}",0
+58802-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_14.java,273,23599,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58804-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_16.java,114,23685,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58804-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_16.java,199,23766,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58805-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_17.java,110,23847,exec(),"{""/bin/ls ""+""foo""}",0
+58805-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_17.java,191,23923,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58806-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_19.java,130,24017,exec(),"{""/bin/ls ""+""foo""}",0
+58806-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_19.java,100,23997,exec(),"{""/bin/ls ""+""foo""}",0
+58806-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_19.java,234,24107,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58806-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_19.java,160,24037,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58807-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_31.java,107,24187,exec(),"{""/bin/ls ""+data_copy}",0
+58807-v1.0.0/src/main/java/CWE78_OS_Command_Injection__fromFile_31.java,148,24217,exec(),"{""/bin/ls ""+data_copy}",0
+144660-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_15.java,64,24254,exec(),"{""/bin/ls ""+null}",0
+144660-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_15.java,100,24282,exec(),"{""/bin/ls ""+""foo""}",0
+144660-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_15.java,136,24310,exec(),"{""/bin/ls ""+null}",0
+144661-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_16.java,58,24346,exec(),"{""/bin/ls ""+cookieSources[0].getValue()}",0
+144661-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_16.java,88,24368,exec(),"{""/bin/ls ""+""foo""}",0
+144662-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_17.java,56,24402,exec(),"{""/bin/ls ""+cookieSources[0].getValue()}",0
+144662-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_17.java,84,24425,exec(),"{""/bin/ls ""+""foo""}",0
+144663-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_21.java,49,24450,exec(),"{""/bin/ls ""+bad_source(request response)}",0
+144663-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_21.java,112,24496,exec(),"{""/bin/ls ""+goodG2B1_source(request response)}",0
+144663-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_21.java,159,24528,exec(),"{""/bin/ls ""+goodG2B2_source(request response)}",0
+144664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_22a.java,49,24560,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getCookies_Servlet_22b().badSource(request response)}",0
+144664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_22a.java,86,24584,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getCookies_Servlet_22b().goodG2B1Source(request response)}",0
+144664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_22a.java,112,24602,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getCookies_Servlet_22b().goodG2B2Source(request response)}",0
+144665-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_31.java,63,24683,exec(),"{""/bin/ls ""+dataCopy}",0
+144665-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_31.java,102,24712,exec(),"{""/bin/ls ""+dataCopy}",0
+144666-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_41.java,41,24728,exec(),"{""/bin/ls ""+}",0
+144666-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_41.java,62,24744,badSink(),{cookieSources[0].getValue()| | },0
+144666-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_41.java,86,24763,exec(),"{""/bin/ls ""+}",0
+144666-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_41.java,99,24771,goodG2BSink(),"{""foo""| | }",0
+144667-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_42.java,62,24801,exec(),"{""/bin/ls ""+badSource(request response)}",0
+144667-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_42.java,95,24824,exec(),"{""/bin/ls ""+goodG2BSource(request response)}",0
+144668-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_45.java,46,24845,exec(),"{""/bin/ls ""+dataBad}",0
+144668-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_45.java,94,24882,exec(),"{""/bin/ls ""+dataGoodG2B}",0
+144669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_51a.java,41,24906,badSink(),{cookieSources[0].getValue()| | },0
+144669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_51a.java,57,24918,goodG2BSink(),"{""foo""| | }",0
+144669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_51b.java,40,24932,exec(),"{""/bin/ls ""+}",0
+144669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_51b.java,62,24947,exec(),"{""/bin/ls ""+}",0
+144670-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_52a.java,42,24963,badSink(),{cookieSources[0].getValue()| | },0
+144670-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_52a.java,58,24975,goodG2BSink(),"{""foo""| | }",0
+144670-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_52c.java,41,24999,exec(),"{""/bin/ls ""+}",0
+144670-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_52c.java,63,25014,exec(),"{""/bin/ls ""+}",0
+144671-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_53a.java,42,25030,badSink(),{cookieSources[0].getValue()| | },0
+144671-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_53a.java,58,25042,goodG2BSink(),"{""foo""| | }",0
+144671-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_53d.java,41,25076,exec(),"{""/bin/ls ""+}",0
+144671-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_53d.java,63,25091,exec(),"{""/bin/ls ""+}",0
+144672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_54a.java,42,25107,badSink(),{cookieSources[0].getValue()| | },0
+144672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_54a.java,58,25119,goodG2BSink(),"{""foo""| | }",0
+144672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_54e.java,41,25163,exec(),"{""/bin/ls ""+}",0
+144672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_54e.java,63,25178,exec(),"{""/bin/ls ""+}",0
+144673-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_61a.java,42,25194,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getCookies_Servlet_61b().badSource(request response)}",0
+144673-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_61a.java,70,25215,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getCookies_Servlet_61b().goodG2BSource(request response)}",0
+144674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_66a.java,44,25255,badSink(),{new String[5]| | },0
+144674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_66a.java,62,25269,goodG2BSink(),{new String[5]| | },0
+144674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_66b.java,42,25284,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_66b.java,65,25300,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_67a.java,49,25318,badSink(),{new Container()| | },0
+144675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_67a.java,67,25332,goodG2BSink(),{new Container()| | },0
+144675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_67b.java,42,25347,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_67b.java,65,25363,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_68b.java,41,25404,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getCookies_Servlet_68a.data}",0
+144676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_68b.java,64,25420,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getCookies_Servlet_68a.data}",0
+144677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_71a.java,42,25436,badSink(),{cookieSources[0].getValue()| | },0
+144677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_71a.java,58,25448,goodG2BSink(),"{""foo""| | }",0
+144677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_71b.java,42,25463,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_71b.java,65,25479,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,46,25498,add(),{2| cookieSources[0].getValue()},0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,44,25496,add(),{0| cookieSources[0].getValue()},0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,47,25499,badSink(),{new Vector<String>(5)| | },0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,45,25497,add(),{1| cookieSources[0].getValue()},0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,64,25512,add(),"{0| ""foo""}",0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,67,25515,goodG2BSink(),{new Vector<String>(5)| | },0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,65,25513,add(),"{1| ""foo""}",0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72a.java,66,25514,add(),"{2| ""foo""}",0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72b.java,43,25530,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144678-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_72b.java,66,25546,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,44,25563,add(),{0| cookieSources[0].getValue()},0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,45,25564,add(),{1| cookieSources[0].getValue()},0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,46,25565,add(),{2| cookieSources[0].getValue()},0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,47,25566,badSink(),{new LinkedList<String>()| | },0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,65,25580,add(),"{1| ""foo""}",0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,67,25582,goodG2BSink(),{new LinkedList<String>()| | },0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,64,25579,add(),"{0| ""foo""}",0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73a.java,66,25581,add(),"{2| ""foo""}",0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73b.java,43,25597,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144679-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_73b.java,66,25613,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,44,25630,put(),{0| cookieSources[0].getValue()},0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,47,25633,badSink(),{new HashMap<Integer String>()| | },0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,45,25631,put(),{1| cookieSources[0].getValue()},0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,46,25632,put(),{2| cookieSources[0].getValue()},0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,66,25648,put(),"{2| ""foo""}",0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,67,25649,goodG2BSink(),{new HashMap<Integer String>()| | },0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,65,25647,put(),"{1| ""foo""}",0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74a.java,64,25646,put(),"{0| ""foo""}",0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74b.java,43,25664,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144680-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_74b.java,66,25680,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,57,25707,badSink(),{streamByteArrayOutput.toByteArray()| | },0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,87,25737,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,75,25724,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,61,25710,log(),"{| ""IOException in serialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,55,25705,writeObject(),{cookieSources[0].getValue()},0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,119,25765,log(),"{| ""IOException in serialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,145,25792,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,133,25779,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,113,25760,writeObject(),"{""foo""}",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75a.java,115,25762,goodG2BSink(),{streamByteArrayOutput.toByteArray()| | },0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,64,25826,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,54,25819,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,78,25840,log(),"{| ""Error closing ObjectInputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,90,25853,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,60,25823,log(),"{| ""IOException in deserialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,131,25887,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,145,25901,log(),"{| ""Error closing ObjectInputStream""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,121,25880,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,127,25884,log(),"{| ""IOException in deserialization""| }",0
+144681-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_75b.java,157,25914,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144682-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_81a.java,43,25932,action(),{cookieSources[0].getValue()| | },0
+144682-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_81a.java,60,25945,action(),"{""foo""| | }",0
+144683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_01.java,46,25961,exec(),"{""/bin/ls ""+request.getParameter(""name"")}",0
+144683-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_01.java,77,25983,exec(),"{""/bin/ls ""+""foo""}",0
+144684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_02.java,54,26007,exec(),"{""/bin/ls ""+null}",0
+144684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_02.java,90,26031,exec(),"{""/bin/ls ""+""foo""}",0
+144684-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_02.java,124,26055,exec(),"{""/bin/ls ""+null}",0
+144685-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_03.java,54,26085,exec(),"{""/bin/ls ""+null}",0
+144685-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_03.java,90,26109,exec(),"{""/bin/ls ""+""foo""}",0
+144685-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_03.java,124,26133,exec(),"{""/bin/ls ""+null}",0
+144686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_04.java,61,26163,exec(),"{""/bin/ls ""+null}",0
+144686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_04.java,97,26187,exec(),"{""/bin/ls ""+""foo""}",0
+144686-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_04.java,131,26211,exec(),"{""/bin/ls ""+null}",0
+144687-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_05.java,61,26241,exec(),"{""/bin/ls ""+null}",0
+144687-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_05.java,97,26265,exec(),"{""/bin/ls ""+""foo""}",0
+144687-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_05.java,131,26289,exec(),"{""/bin/ls ""+null}",0
+144688-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_06.java,60,26319,exec(),"{""/bin/ls ""+null}",0
+144688-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_06.java,96,26343,exec(),"{""/bin/ls ""+""foo""}",0
+144688-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_06.java,130,26367,exec(),"{""/bin/ls ""+null}",0
+144689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_07.java,60,26397,exec(),"{""/bin/ls ""+null}",0
+144689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_07.java,96,26421,exec(),"{""/bin/ls ""+""foo""}",0
+144689-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_07.java,130,26445,exec(),"{""/bin/ls ""+null}",0
+144690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_08.java,68,26475,exec(),"{""/bin/ls ""+null}",0
+144690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_08.java,104,26499,exec(),"{""/bin/ls ""+""foo""}",0
+144690-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_08.java,138,26523,exec(),"{""/bin/ls ""+null}",0
+144691-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_09.java,54,26553,exec(),"{""/bin/ls ""+null}",0
+144691-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_09.java,90,26577,exec(),"{""/bin/ls ""+""foo""}",0
+144691-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_09.java,124,26601,exec(),"{""/bin/ls ""+null}",0
+144692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_10.java,54,26631,exec(),"{""/bin/ls ""+null}",0
+144692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_10.java,90,26655,exec(),"{""/bin/ls ""+""foo""}",0
+144692-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_10.java,124,26679,exec(),"{""/bin/ls ""+null}",0
+144693-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_11.java,54,26709,exec(),"{""/bin/ls ""+null}",0
+144693-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_11.java,90,26733,exec(),"{""/bin/ls ""+""foo""}",0
+144693-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_11.java,124,26757,exec(),"{""/bin/ls ""+null}",0
+144694-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_12.java,55,26787,exec(),"{""/bin/ls ""+""foo""}",0
+144694-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_12.java,91,26811,exec(),"{""/bin/ls ""+""foo""}",0
+144695-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_13.java,54,26840,exec(),"{""/bin/ls ""+null}",0
+144695-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_13.java,90,26864,exec(),"{""/bin/ls ""+""foo""}",0
+144695-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_13.java,124,26888,exec(),"{""/bin/ls ""+null}",0
+144696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_14.java,54,26918,exec(),"{""/bin/ls ""+null}",0
+144696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_14.java,90,26942,exec(),"{""/bin/ls ""+""foo""}",0
+144696-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_14.java,124,26966,exec(),"{""/bin/ls ""+null}",0
+144697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_15.java,56,27000,exec(),"{""/bin/ls ""+null}",0
+144697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_15.java,92,27028,exec(),"{""/bin/ls ""+""foo""}",0
+144697-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_15.java,128,27056,exec(),"{""/bin/ls ""+null}",0
+144698-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_16.java,50,27084,exec(),"{""/bin/ls ""+request.getParameter(""name"")}",0
+144698-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_16.java,80,27106,exec(),"{""/bin/ls ""+""foo""}",0
+144699-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_17.java,47,27132,exec(),"{""/bin/ls ""+request.getParameter(""name"")}",0
+144699-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_17.java,75,27155,exec(),"{""/bin/ls ""+""foo""}",0
+144700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_21.java,49,27180,exec(),"{""/bin/ls ""+bad_source(request response)}",0
+144700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_21.java,104,27218,exec(),"{""/bin/ls ""+goodG2B1_source(request response)}",0
+144700-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_21.java,151,27250,exec(),"{""/bin/ls ""+goodG2B2_source(request response)}",0
+144701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_22a.java,49,27282,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getParameter_Servlet_22b().badSource(request response)}",0
+144701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_22a.java,86,27306,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getParameter_Servlet_22b().goodG2B1Source(request response)}",0
+144701-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_22a.java,112,27324,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getParameter_Servlet_22b().goodG2B2Source(request response)}",0
+144702-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_31.java,54,27389,exec(),"{""/bin/ls ""+dataCopy}",0
+144702-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_31.java,93,27418,exec(),"{""/bin/ls ""+dataCopy}",0
+144703-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_41.java,41,27434,exec(),"{""/bin/ls ""+}",0
+144703-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_41.java,53,27442,badSink(),"{request.getParameter(""name"")| | }",0
+144703-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_41.java,77,27461,exec(),"{""/bin/ls ""+}",0
+144703-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_41.java,90,27469,goodG2BSink(),"{""foo""| | }",0
+144704-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_42.java,53,27491,exec(),"{""/bin/ls ""+badSource(request response)}",0
+144704-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_42.java,86,27514,exec(),"{""/bin/ls ""+goodG2BSource(request response)}",0
+144705-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_45.java,46,27535,exec(),"{""/bin/ls ""+dataBad}",0
+144705-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_45.java,85,27564,exec(),"{""/bin/ls ""+dataGoodG2B}",0
+144706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_51a.java,32,27580,badSink(),"{request.getParameter(""name"")| | }",0
+144706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_51a.java,48,27592,goodG2BSink(),"{""foo""| | }",0
+144706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_51b.java,40,27606,exec(),"{""/bin/ls ""+}",0
+144706-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_51b.java,62,27621,exec(),"{""/bin/ls ""+}",0
+144707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_52a.java,33,27629,badSink(),"{request.getParameter(""name"")| | }",0
+144707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_52a.java,49,27641,goodG2BSink(),"{""foo""| | }",0
+144707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_52c.java,41,27665,exec(),"{""/bin/ls ""+}",0
+144707-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_52c.java,63,27680,exec(),"{""/bin/ls ""+}",0
+144708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_53a.java,33,27688,badSink(),"{request.getParameter(""name"")| | }",0
+144708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_53a.java,49,27700,goodG2BSink(),"{""foo""| | }",0
+144708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_53d.java,41,27734,exec(),"{""/bin/ls ""+}",0
+144708-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_53d.java,63,27749,exec(),"{""/bin/ls ""+}",0
+144709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_54a.java,33,27757,badSink(),"{request.getParameter(""name"")| | }",0
+144709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_54a.java,49,27769,goodG2BSink(),"{""foo""| | }",0
+144709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_54e.java,41,27813,exec(),"{""/bin/ls ""+}",0
+144709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_54e.java,63,27828,exec(),"{""/bin/ls ""+}",0
+144710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_61a.java,42,27844,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getParameter_Servlet_61b().badSource(request response)}",0
+144710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_61a.java,70,27865,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getParameter_Servlet_61b().goodG2BSource(request response)}",0
+144711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_66a.java,35,27889,badSink(),{new String[5]| | },0
+144711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_66a.java,53,27903,goodG2BSink(),{new String[5]| | },0
+144711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_66b.java,42,27918,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_66b.java,65,27934,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67a.java,40,27944,badSink(),{new Container()| | },0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67a.java,58,27958,goodG2BSink(),{new Container()| | },0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67b.java,42,27973,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67b.java,65,27989,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67a.java,40,27999,badSink(),{new Container()| | },0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67a.java,58,28013,goodG2BSink(),{new Container()| | },0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67b.java,42,28028,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144712-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_67b.java,65,28044,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144713-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_68b.java,41,28077,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getParameter_Servlet_68a.data}",0
+144713-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_68b.java,64,28093,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getParameter_Servlet_68a.data}",0
+144714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_71a.java,33,28101,badSink(),"{request.getParameter(""name"")| | }",0
+144714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_71a.java,49,28113,goodG2BSink(),"{""foo""| | }",0
+144714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_71b.java,42,28128,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144714-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_71b.java,65,28144,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,36,28154,add(),"{1| request.getParameter(""name"")}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,35,28153,add(),"{0| request.getParameter(""name"")}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,38,28156,badSink(),{new Vector<String>(5)| | },0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,37,28155,add(),"{2| request.getParameter(""name"")}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,55,28169,add(),"{0| ""foo""}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,58,28172,goodG2BSink(),{new Vector<String>(5)| | },0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,56,28170,add(),"{1| ""foo""}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72a.java,57,28171,add(),"{2| ""foo""}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72b.java,43,28187,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144715-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_72b.java,66,28203,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,35,28212,add(),"{0| request.getParameter(""name"")}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,38,28215,badSink(),{new LinkedList<String>()| | },0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,36,28213,add(),"{1| request.getParameter(""name"")}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,37,28214,add(),"{2| request.getParameter(""name"")}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,55,28228,add(),"{0| ""foo""}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,56,28229,add(),"{1| ""foo""}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,58,28231,goodG2BSink(),{new LinkedList<String>()| | },0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73a.java,57,28230,add(),"{2| ""foo""}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73b.java,43,28246,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144716-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_73b.java,66,28262,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,37,28273,put(),"{2| request.getParameter(""name"")}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,36,28272,put(),"{1| request.getParameter(""name"")}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,38,28274,badSink(),{new HashMap<Integer String>()| | },0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,35,28271,put(),"{0| request.getParameter(""name"")}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,57,28289,put(),"{2| ""foo""}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,56,28288,put(),"{1| ""foo""}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,58,28290,goodG2BSink(),{new HashMap<Integer String>()| | },0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74a.java,55,28287,put(),"{0| ""foo""}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74b.java,43,28305,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144717-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_74b.java,66,28321,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,66,28357,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,52,28343,log(),"{| ""IOException in serialization""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,48,28340,badSink(),{streamByteArrayOutput.toByteArray()| | },0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,78,28370,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,46,28338,writeObject(),"{request.getParameter(""name"")}",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,106,28395,goodG2BSink(),{streamByteArrayOutput.toByteArray()| | },0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,136,28425,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,104,28393,writeObject(),"{""foo""}",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,110,28398,log(),"{| ""IOException in serialization""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75a.java,124,28412,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,90,28486,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,54,28452,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,78,28473,log(),"{| ""Error closing ObjectInputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,60,28456,log(),"{| ""IOException in deserialization""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,64,28459,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,131,28520,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,157,28547,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,121,28513,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,145,28534,log(),"{| ""Error closing ObjectInputStream""| }",0
+144718-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_75b.java,127,28517,log(),"{| ""IOException in deserialization""| }",0
+144719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_81a.java,34,28557,action(),"{request.getParameter(""name"")| | }",0
+144719-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getParameter_Servlet_81a.java,51,28570,action(),"{""foo""| | }",0
+144720-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_01.java,60,28600,exec(),"{""/bin/ls ""+token.substring(3)}",0
+144720-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_01.java,91,28622,exec(),"{""/bin/ls ""+""foo""}",0
+144721-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_02.java,67,28660,exec(),"{""/bin/ls ""+null}",0
+144721-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_02.java,103,28684,exec(),"{""/bin/ls ""+""foo""}",0
+144721-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_02.java,137,28708,exec(),"{""/bin/ls ""+null}",0
+144722-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_03.java,67,28752,exec(),"{""/bin/ls ""+null}",0
+144722-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_03.java,103,28776,exec(),"{""/bin/ls ""+""foo""}",0
+144722-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_03.java,137,28800,exec(),"{""/bin/ls ""+null}",0
+144723-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_04.java,74,28844,exec(),"{""/bin/ls ""+null}",0
+144723-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_04.java,110,28868,exec(),"{""/bin/ls ""+""foo""}",0
+144723-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_04.java,144,28892,exec(),"{""/bin/ls ""+null}",0
+144724-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_05.java,74,28936,exec(),"{""/bin/ls ""+null}",0
+144724-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_05.java,110,28960,exec(),"{""/bin/ls ""+""foo""}",0
+144724-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_05.java,144,28984,exec(),"{""/bin/ls ""+null}",0
+144725-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_06.java,73,29028,exec(),"{""/bin/ls ""+null}",0
+144725-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_06.java,109,29052,exec(),"{""/bin/ls ""+""foo""}",0
+144725-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_06.java,143,29076,exec(),"{""/bin/ls ""+null}",0
+144726-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_07.java,73,29120,exec(),"{""/bin/ls ""+null}",0
+144726-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_07.java,109,29144,exec(),"{""/bin/ls ""+""foo""}",0
+144726-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_07.java,143,29168,exec(),"{""/bin/ls ""+null}",0
+144727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_08.java,81,29212,exec(),"{""/bin/ls ""+null}",0
+144727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_08.java,117,29236,exec(),"{""/bin/ls ""+""foo""}",0
+144727-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_08.java,151,29260,exec(),"{""/bin/ls ""+null}",0
+144728-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_09.java,67,29304,exec(),"{""/bin/ls ""+null}",0
+144728-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_09.java,103,29328,exec(),"{""/bin/ls ""+""foo""}",0
+144728-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_09.java,137,29352,exec(),"{""/bin/ls ""+null}",0
+144729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_10.java,67,29396,exec(),"{""/bin/ls ""+null}",0
+144729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_10.java,103,29420,exec(),"{""/bin/ls ""+""foo""}",0
+144729-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_10.java,137,29444,exec(),"{""/bin/ls ""+null}",0
+144730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_11.java,67,29488,exec(),"{""/bin/ls ""+null}",0
+144730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_11.java,103,29512,exec(),"{""/bin/ls ""+""foo""}",0
+144730-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_11.java,137,29536,exec(),"{""/bin/ls ""+null}",0
+144731-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_12.java,68,29580,exec(),"{""/bin/ls ""+""foo""}",0
+144731-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_12.java,104,29604,exec(),"{""/bin/ls ""+""foo""}",0
+144732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_13.java,67,29647,exec(),"{""/bin/ls ""+null}",0
+144732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_13.java,103,29671,exec(),"{""/bin/ls ""+""foo""}",0
+144732-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_13.java,137,29695,exec(),"{""/bin/ls ""+null}",0
+144733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_14.java,67,29739,exec(),"{""/bin/ls ""+null}",0
+144733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_14.java,103,29763,exec(),"{""/bin/ls ""+""foo""}",0
+144733-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_14.java,137,29787,exec(),"{""/bin/ls ""+null}",0
+144734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_15.java,69,29835,exec(),"{""/bin/ls ""+null}",0
+144734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_15.java,105,29863,exec(),"{""/bin/ls ""+""foo""}",0
+144734-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_15.java,141,29891,exec(),"{""/bin/ls ""+null}",0
+144735-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_16.java,63,29933,exec(),"{""/bin/ls ""+token.substring(3)}",0
+144735-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_16.java,93,29955,exec(),"{""/bin/ls ""+""foo""}",0
+144736-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_17.java,61,29995,exec(),"{""/bin/ls ""+token.substring(3)}",0
+144736-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_17.java,89,30018,exec(),"{""/bin/ls ""+""foo""}",0
+144737-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_21.java,50,30043,exec(),"{""/bin/ls ""+bad_source(request response)}",0
+144737-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_21.java,117,30095,exec(),"{""/bin/ls ""+goodG2B1_source(request response)}",0
+144737-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_21.java,164,30127,exec(),"{""/bin/ls ""+goodG2B2_source(request response)}",0
+144738-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_22a.java,49,30159,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getQueryString_Servlet_22b().badSource(request response)}",0
+144738-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_22a.java,86,30183,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getQueryString_Servlet_22b().goodG2B1Source(request response)}",0
+144738-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_22a.java,112,30201,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getQueryString_Servlet_22b().goodG2B2Source(request response)}",0
+144739-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_31.java,68,30294,exec(),"{""/bin/ls ""+dataCopy}",0
+144739-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_31.java,107,30323,exec(),"{""/bin/ls ""+dataCopy}",0
+144740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_41.java,42,30339,exec(),"{""/bin/ls ""+}",0
+144740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_41.java,67,30361,badSink(),{token.substring(3)| | },0
+144740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_41.java,91,30380,exec(),"{""/bin/ls ""+}",0
+144740-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_41.java,104,30388,goodG2BSink(),"{""foo""| | }",0
+144741-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_42.java,67,30424,exec(),"{""/bin/ls ""+badSource(request response)}",0
+144741-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_42.java,100,30447,exec(),"{""/bin/ls ""+goodG2BSource(request response)}",0
+144742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_45.java,47,30468,exec(),"{""/bin/ls ""+dataBad}",0
+144742-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_45.java,99,30511,exec(),"{""/bin/ls ""+dataGoodG2B}",0
+144743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_51a.java,46,30541,badSink(),{token.substring(3)| | },0
+144743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_51a.java,62,30553,goodG2BSink(),"{""foo""| | }",0
+144743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_51b.java,40,30567,exec(),"{""/bin/ls ""+}",0
+144743-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_51b.java,62,30582,exec(),"{""/bin/ls ""+}",0
+144744-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_52a.java,47,30604,badSink(),{token.substring(3)| | },0
+144744-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_52a.java,63,30616,goodG2BSink(),"{""foo""| | }",0
+144744-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_52c.java,41,30640,exec(),"{""/bin/ls ""+}",0
+144744-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_52c.java,63,30655,exec(),"{""/bin/ls ""+}",0
+144745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_53a.java,47,30677,badSink(),{token.substring(3)| | },0
+144745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_53a.java,63,30689,goodG2BSink(),"{""foo""| | }",0
+144745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_53d.java,41,30723,exec(),"{""/bin/ls ""+}",0
+144745-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_53d.java,63,30738,exec(),"{""/bin/ls ""+}",0
+144746-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_54a.java,47,30760,badSink(),{token.substring(3)| | },0
+144746-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_54a.java,63,30772,goodG2BSink(),"{""foo""| | }",0
+144746-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_54e.java,41,30816,exec(),"{""/bin/ls ""+}",0
+144746-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_54e.java,63,30831,exec(),"{""/bin/ls ""+}",0
+144747-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_61a.java,42,30847,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getQueryString_Servlet_61b().badSource(request response)}",0
+144747-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_61a.java,70,30868,exec(),"{""/bin/ls ""+new CWE78_OS_Command_Injection__getQueryString_Servlet_61b().goodG2BSource(request response)}",0
+144748-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_66a.java,49,30920,badSink(),{new String[5]| | },0
+144748-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_66a.java,67,30934,goodG2BSink(),{new String[5]| | },0
+144748-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_66b.java,42,30949,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144748-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_66b.java,65,30965,exec(),"{""/bin/ls ""+dataArray[2]}",0
+144749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_67a.java,54,30989,badSink(),{new Container()| | },0
+144749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_67a.java,72,31003,goodG2BSink(),{new Container()| | },0
+144749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_67b.java,42,31018,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144749-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_67b.java,65,31034,exec(),"{""/bin/ls ""+dataContainer.containerOne}",0
+144750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_68b.java,41,31081,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getQueryString_Servlet_68a.data}",0
+144750-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_68b.java,64,31097,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__getQueryString_Servlet_68a.data}",0
+144751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_71a.java,47,31119,badSink(),{token.substring(3)| | },0
+144751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_71a.java,63,31131,goodG2BSink(),"{""foo""| | }",0
+144751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_71b.java,42,31146,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144751-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_71b.java,65,31162,exec(),"{""/bin/ls ""+((String) (dataObject))}",0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,49,31185,add(),{0| token.substring(3)},0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,52,31188,badSink(),{new Vector<String>(5)| | },0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,51,31187,add(),{2| token.substring(3)},0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,50,31186,add(),{1| token.substring(3)},0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,69,31201,add(),"{0| ""foo""}",0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,72,31204,goodG2BSink(),{new Vector<String>(5)| | },0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,70,31202,add(),"{1| ""foo""}",0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72a.java,71,31203,add(),"{2| ""foo""}",0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72b.java,43,31219,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144752-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_72b.java,66,31235,exec(),"{""/bin/ls ""+dataVector.remove(2)}",0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,51,31260,add(),{2| token.substring(3)},0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,52,31261,badSink(),{new LinkedList<String>()| | },0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,49,31258,add(),{0| token.substring(3)},0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,50,31259,add(),{1| token.substring(3)},0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,72,31277,goodG2BSink(),{new LinkedList<String>()| | },0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,71,31276,add(),"{2| ""foo""}",0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,69,31274,add(),"{0| ""foo""}",0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73a.java,70,31275,add(),"{1| ""foo""}",0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73b.java,43,31292,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144753-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_73b.java,66,31308,exec(),"{""/bin/ls ""+dataLinkedList.remove(2)}",0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,49,31331,put(),{0| token.substring(3)},0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,50,31332,put(),{1| token.substring(3)},0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,51,31333,put(),{2| token.substring(3)},0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,52,31334,badSink(),{new HashMap<Integer String>()| | },0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,70,31348,put(),"{1| ""foo""}",0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,71,31349,put(),"{2| ""foo""}",0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,72,31350,goodG2BSink(),{new HashMap<Integer String>()| | },0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java,69,31347,put(),"{0| ""foo""}",0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java,43,31365,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144754-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java,66,31381,exec(),"{""/bin/ls ""+dataHashMap.get(2)}",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,62,31414,badSink(),{streamByteArrayOutput.toByteArray()| | },0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,92,31444,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,66,31417,log(),"{| ""IOException in serialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,80,31431,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,60,31412,writeObject(),{token.substring(3)},0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,118,31467,writeObject(),"{""foo""}",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,138,31486,log(),"{| ""Error closing ObjectOutputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,120,31469,goodG2BSink(),{streamByteArrayOutput.toByteArray()| | },0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,150,31499,log(),"{| ""Error closing ByteArrayOutputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75a.java,124,31472,log(),"{| ""IOException in serialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,64,31533,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,90,31560,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,54,31526,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,60,31530,log(),"{| ""IOException in deserialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,78,31547,log(),"{| ""Error closing ObjectInputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,131,31594,log(),"{| ""ClassNotFoundException in deserialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,157,31621,log(),"{| ""Error closing ByteArrayInputStream""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,121,31587,exec(),"{""/bin/ls ""+((String) (streamObjectInput.readObject()))}",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,127,31591,log(),"{| ""IOException in deserialization""| }",0
+144755-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_75b.java,145,31608,log(),"{| ""Error closing ObjectInputStream""| }",0
+144756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_81a.java,48,31645,action(),{token.substring(3)| | },0
+144756-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getQueryString_Servlet_81a.java,65,31658,action(),"{""foo""| | }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,88,31709,log(),"{| ""Error closing InputStreamReader""| }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,101,31722,log(),"{| ""Error closing Socket""| }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,62,31682,log(),"{| ""Error with stream reading""| }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,113,31735,log(),"{| ""Error closing ServerSocket""| }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,76,31696,log(),"{| ""Error closing BufferedReader""| }",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,131,31748,exec(),"{""/bin/ls ""+readerBuffered.readLine()}",0
+144757-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_01.java,162,31770,exec(),"{""/bin/ls ""+""foo""}",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,109,31851,log(),"{| ""Error closing ServerSocket""| }",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,72,31812,log(),"{| ""Error closing BufferedReader""| }",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,84,31825,log(),"{| ""Error closing InputStreamReader""| }",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,58,31798,log(),"{| ""Error with stream reading""| }",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,97,31838,log(),"{| ""Error closing Socket""| }",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,134,31868,exec(),"{""/bin/ls ""+null}",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,170,31892,exec(),"{""/bin/ls ""+""foo""}",0
+144758-v1.0.0/src/main/java/CWE78_OS_Command_Injection__listen_tcp_02.java,204,31916,exec(),"{""/bin/ls ""+null}",0
+144659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_14.java,62,31954,exec(),"{""/bin/ls ""+null}",0
+144659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_14.java,98,31978,exec(),"{""/bin/ls ""+""foo""}",0
+144659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__getCookies_Servlet_14.java,132,32002,exec(),"{""/bin/ls ""+null}",0
+58709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_17.java,120,32094,exec(),"{""/bin/ls ""+""foo""}",0
+58709-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_17.java,210,32180,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,110,32264,exec(),"{""/bin/ls ""+""foo""}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,140,32284,exec(),"{""/bin/ls ""+""foo""}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,170,32304,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58710-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_19.java,254,32384,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_31.java,117,32474,exec(),"{""/bin/ls ""+data_copy}",0
+58711-v1.0.0/src/main/java/CWE78_OS_Command_Injection__connect_tcp_31.java,158,32504,exec(),"{""/bin/ls ""+data_copy}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,46,32525,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,91,32560,exec(),"{""/bin/ls ""+""foo""}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,155,32615,exec(),"{""/bin/ls ""+""foo""}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,111,32580,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,219,32670,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58639-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_11.java,182,32639,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58640-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_12.java,90,32731,exec(),"{""/bin/ls ""+""foo""}",0
+58640-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_12.java,46,32696,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58640-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_12.java,128,32757,exec(),"{""/bin/ls ""+""foo""}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,46,32782,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,91,32817,exec(),"{""/bin/ls ""+""foo""}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,111,32837,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,155,32872,exec(),"{""/bin/ls ""+""foo""}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,219,32927,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58641-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_13.java,182,32896,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,46,32953,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,91,32988,exec(),"{""/bin/ls ""+""foo""}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,155,33043,exec(),"{""/bin/ls ""+""foo""}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,111,33008,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,182,33067,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58642-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_14.java,219,33098,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58644-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_16.java,96,33163,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58644-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_16.java,59,33131,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58644-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_16.java,163,33223,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58644-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_16.java,126,33191,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,47,33246,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,112,33296,exec(),"{""/bin/ls ""+""foo""}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,82,33276,exec(),"{""/bin/ls ""+""foo""}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,142,33316,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,163,33335,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58646-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_19.java,198,33365,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,89,33424,exec(),"{""/bin/ls ""+data_copy}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,49,33390,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,130,33454,exec(),"{""/bin/ls ""+data_copy}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,89,33508,exec(),"{""/bin/ls ""+data_copy}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,49,33474,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58647-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_31.java,130,33538,exec(),"{""/bin/ls ""+data_copy}",0
+58648-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_41.java,48,33554,exec(),"{""/bin/ls ""+}",0
+58648-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_41.java,66,33571,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58648-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_41.java,88,33592,bad_sink(),"{props.getProperty(""data"")}",0
+58648-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_41.java,112,33611,exec(),"{""/bin/ls ""+}",0
+58648-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_41.java,127,33620,goodG2B_sink(),"{""foo""}",0
+58649-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_42.java,45,33636,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58649-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_42.java,88,33672,exec(),"{""/bin/ls ""+bad_source()}",0
+58649-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_42.java,123,33696,exec(),"{""/bin/ls ""+goodG2B_source()}",0
+58651-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_51a.java,45,33718,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58651-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_51a.java,67,33739,bad_sink(),"{props.getProperty(""data"")}",0
+58651-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_51a.java,85,33752,goodG2B_sink(),"{""foo""}",0
+58651-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_51b.java,41,33766,exec(),"{""/bin/ls ""+}",0
+58651-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_51b.java,63,33781,exec(),"{""/bin/ls ""+}",0
+58653-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_52a.java,46,33798,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58653-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_52a.java,68,33819,bad_sink(),"{props.getProperty(""data"")}",0
+58653-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_52a.java,86,33832,goodG2B_sink(),"{""foo""}",0
+58653-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_52c.java,42,33856,exec(),"{""/bin/ls ""+}",0
+58653-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_52c.java,64,33871,exec(),"{""/bin/ls ""+}",0
+58654-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_53a.java,46,33888,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58654-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_53a.java,68,33909,bad_sink(),"{props.getProperty(""data"")}",0
+58654-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_53a.java,86,33922,goodG2B_sink(),"{""foo""}",0
+58654-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_53d.java,42,33956,exec(),"{""/bin/ls ""+}",0
+58654-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_53d.java,64,33971,exec(),"{""/bin/ls ""+}",0
+58657-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_66a.java,70,34011,bad_sink(),{new String[5]},0
+58657-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_66a.java,46,33988,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58657-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_66a.java,90,34026,goodG2B_sink(),{new String[5]},0
+58657-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_66b.java,43,34041,exec(),"{""/bin/ls ""+data_array[2]}",0
+58657-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_66b.java,66,34057,exec(),"{""/bin/ls ""+data_array[2]}",0
+58658-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_67a.java,51,34074,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58658-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_67a.java,75,34097,bad_sink(),{new Container()},0
+58658-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_67a.java,95,34112,goodG2B_sink(),{new Container()},0
+58658-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_67b.java,43,34127,exec(),"{""/bin/ls ""+data_container.a}",0
+58658-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_67b.java,66,34143,exec(),"{""/bin/ls ""+data_container.a}",0
+58659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_68a.java,48,34159,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_68b.java,44,34207,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__PropertiesFile_68a.data}",0
+58659-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_68b.java,67,34223,exec(),"{""/bin/ls ""+CWE78_OS_Command_Injection__PropertiesFile_68a.data}",0
+58661-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_01.java,96,34287,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58661-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_01.java,129,34310,exec(),"{""/bin/ls ""+""foo""}",0
+58664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_04.java,112,34382,exec(),"{""/bin/ls ""+""foo""}",0
+58664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_04.java,190,34454,exec(),"{""/bin/ls ""+""foo""}",0
+58664-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_04.java,268,34526,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58665-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_05.java,112,34604,exec(),"{""/bin/ls ""+""foo""}",0
+58665-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_05.java,190,34676,exec(),"{""/bin/ls ""+""foo""}",0
+58665-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_05.java,268,34748,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58667-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_07.java,111,34826,exec(),"{""/bin/ls ""+""foo""}",0
+58667-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_07.java,189,34898,exec(),"{""/bin/ls ""+""foo""}",0
+58667-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_07.java,267,34970,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58668-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_08.java,119,35048,exec(),"{""/bin/ls ""+""foo""}",0
+58668-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_08.java,197,35120,exec(),"{""/bin/ls ""+""foo""}",0
+58668-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_08.java,275,35192,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_09.java,106,35270,exec(),"{""/bin/ls ""+""foo""}",0
+58669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_09.java,184,35342,exec(),"{""/bin/ls ""+""foo""}",0
+58669-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_09.java,262,35414,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_12.java,105,35492,exec(),"{""/bin/ls ""+""foo""}",0
+58672-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_12.java,143,35518,exec(),"{""/bin/ls ""+""foo""}",0
+58673-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_13.java,106,35595,exec(),"{""/bin/ls ""+""foo""}",0
+58673-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_13.java,184,35667,exec(),"{""/bin/ls ""+""foo""}",0
+58673-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_13.java,262,35739,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_14.java,106,35817,exec(),"{""/bin/ls ""+""foo""}",0
+58674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_14.java,184,35889,exec(),"{""/bin/ls ""+""foo""}",0
+58674-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_14.java,262,35961,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,109,36047,exec(),"{""/bin/ls ""+""foo""}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,190,36127,exec(),"{""/bin/ls ""+""foo""}",0
+58675-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_15.java,271,36207,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_16.java,111,36289,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58676-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_16.java,192,36366,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_17.java,107,36443,exec(),"{""/bin/ls ""+""foo""}",0
+58677-v1.0.0/src/main/java/CWE78_OS_Command_Injection__URLConnection_17.java,184,36515,exec(),"{""/bin/ls ""+buffread.readLine()}",0
+58602-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_06.java,65,36546,exec(),"{""/bin/ls ""+""foo""}",0
+58602-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_06.java,103,36572,exec(),"{""/bin/ls ""+""foo""}",0
+58602-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_06.java,141,36598,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58603-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_07.java,65,36630,exec(),"{""/bin/ls ""+""foo""}",0
+58603-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_07.java,103,36656,exec(),"{""/bin/ls ""+""foo""}",0
+58603-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_07.java,141,36682,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58605-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_09.java,60,36714,exec(),"{""/bin/ls ""+""foo""}",0
+58605-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_09.java,98,36740,exec(),"{""/bin/ls ""+""foo""}",0
+58605-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_09.java,136,36766,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58606-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_10.java,60,36798,exec(),"{""/bin/ls ""+""foo""}",0
+58606-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_10.java,98,36824,exec(),"{""/bin/ls ""+""foo""}",0
+58606-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_10.java,136,36850,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58607-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_11.java,60,36882,exec(),"{""/bin/ls ""+""foo""}",0
+58607-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_11.java,98,36908,exec(),"{""/bin/ls ""+""foo""}",0
+58607-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_11.java,136,36934,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58608-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_12.java,59,36966,exec(),"{""/bin/ls ""+""foo""}",0
+58608-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_12.java,97,36992,exec(),"{""/bin/ls ""+""foo""}",0
+58609-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_13.java,60,37023,exec(),"{""/bin/ls ""+""foo""}",0
+58609-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_13.java,98,37049,exec(),"{""/bin/ls ""+""foo""}",0
+58609-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_13.java,136,37075,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58610-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_14.java,60,37107,exec(),"{""/bin/ls ""+""foo""}",0
+58610-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_14.java,98,37133,exec(),"{""/bin/ls ""+""foo""}",0
+58610-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_14.java,136,37159,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58611-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_15.java,63,37199,exec(),"{""/bin/ls ""+""foo""}",0
+58611-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_15.java,104,37233,exec(),"{""/bin/ls ""+""foo""}",0
+58611-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_15.java,145,37267,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58614-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_19.java,51,37292,exec(),"{""/bin/ls ""+""foo""}",0
+58614-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_19.java,81,37312,exec(),"{""/bin/ls ""+""foo""}",0
+58614-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_19.java,111,37332,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58614-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_19.java,141,37352,exec(),"{""/bin/ls ""+System.getenv(""ADD"")}",0
+58615-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_31.java,58,37382,exec(),"{""/bin/ls ""+data_copy}",0
+58615-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_31.java,99,37412,exec(),"{""/bin/ls ""+data_copy}",0
+58618-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_45.java,48,37429,exec(),"{""/bin/ls ""+bad_data}",0
+58618-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_45.java,89,37459,exec(),"{""/bin/ls ""+goodG2B_data}",0
+58619-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_51a.java,36,37477,bad_sink(),"{System.getenv(""ADD"")}",0
+58619-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_51a.java,54,37490,goodG2B_sink(),"{""foo""}",0
+58619-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_51b.java,41,37504,exec(),"{""/bin/ls ""+}",0
+58619-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_51b.java,63,37519,exec(),"{""/bin/ls ""+}",0
+58620-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52a.java,37,37528,bad_sink(),"{System.getenv(""ADD"")}",0
+58620-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52a.java,55,37541,goodG2B_sink(),"{""foo""}",0
+58620-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52c.java,42,37565,exec(),"{""/bin/ls ""+}",0
+58620-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52c.java,64,37580,exec(),"{""/bin/ls ""+}",0
+58621-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52a.java,37,37589,bad_sink(),"{System.getenv(""ADD"")}",0
+58621-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52a.java,55,37602,goodG2B_sink(),"{""foo""}",0
+58621-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52c.java,42,37626,exec(),"{""/bin/ls ""+}",0
+58621-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_52c.java,64,37641,exec(),"{""/bin/ls ""+}",0
+58623-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_54a.java,37,37650,bad_sink(),"{System.getenv(""ADD"")}",0
+58623-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_54a.java,55,37663,goodG2B_sink(),"{""foo""}",0
+58623-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_54e.java,42,37707,exec(),"{""/bin/ls ""+}",0
+58623-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_54e.java,64,37722,exec(),"{""/bin/ls ""+}",0
+58625-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_66a.java,39,37733,bad_sink(),{new String[5]},0
+58625-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_66a.java,59,37748,goodG2B_sink(),{new String[5]},0
+58625-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_66b.java,43,37763,exec(),"{""/bin/ls ""+data_array[2]}",0
+58625-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_66b.java,66,37779,exec(),"{""/bin/ls ""+data_array[2]}",0
+58626-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_67a.java,44,37790,bad_sink(),{new Container()},0
+58626-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_67a.java,64,37805,goodG2B_sink(),{new Container()},0
+58626-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_67b.java,43,37820,exec(),"{""/bin/ls ""+data_container.a}",0
+58626-v1.0.0/src/main/java/CWE78_OS_Command_Injection__Environment_67b.java,66,37836,exec(),"{""/bin/ls ""+data_container.a}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,46,37856,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,91,37891,exec(),"{""/bin/ls ""+""foo""}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,111,37911,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,155,37946,exec(),"{""/bin/ls ""+""foo""}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,182,37970,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58630-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_02.java,219,38001,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,96,38062,exec(),"{""/bin/ls ""+""foo""}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,51,38027,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,116,38082,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,160,38117,exec(),"{""/bin/ls ""+""foo""}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,224,38172,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58634-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_06.java,187,38141,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,46,38198,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,91,38233,exec(),"{""/bin/ls ""+""foo""}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,111,38253,load(),"{new FileInputStream(""../common/config.properties"")}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,155,38288,exec(),"{""/bin/ls ""+""foo""}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,219,38343,exec(),"{""/bin/ls ""+props.getProperty(""data"")}",0
+58637-v1.0.0/src/main/java/CWE78_OS_Command_Injection__PropertiesFile_09.java,182,38312,load(),"{new FileInputStream(""../common/config.properties"")}",0

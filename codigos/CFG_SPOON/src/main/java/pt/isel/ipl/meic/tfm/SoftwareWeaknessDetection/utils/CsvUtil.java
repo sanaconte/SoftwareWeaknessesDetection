@@ -2,6 +2,7 @@ package pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.utils;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -113,7 +114,6 @@ public class CsvUtil {
     private static List<String> getMergedLinesV4(List<List<String>> listaMatrizes){
         List<String> mergedLines = new ArrayList<>();
         for (List<String> lines : listaMatrizes){
-            //List<String> lines = Files.readAllLines(p, Charset.forName("UTF-8"));
             if (!lines.isEmpty()) {
                 if (mergedLines.isEmpty()) {
                     mergedLines.add(lines.get(0)); //add header only once
@@ -167,7 +167,12 @@ public class CsvUtil {
     }
 
     public static void createDataset(List<List<String>> listaMatrizes, String fileName) {
-        String path = "E:/TFM/Trabalho/SoftwareWeaknessesDetection/codigos/CFG_SPOON/dataset/";
+        String directory = FileSystems.getDefault()
+                .getPath("")
+                .toAbsolutePath()
+                .toString();
+        System.out.println("directory: "+directory);
+        String path = directory+"/dataset/";
         List<String> mergedData = getMergedLinesV4(listaMatrizes);
         datatocsv(mergedData, path + fileName);
     }

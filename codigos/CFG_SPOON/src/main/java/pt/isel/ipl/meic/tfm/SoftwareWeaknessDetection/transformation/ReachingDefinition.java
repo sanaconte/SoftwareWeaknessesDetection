@@ -17,30 +17,31 @@ public class ReachingDefinition {
     private Map<ControlFlowNode, Set<String>> gen;
     private Map<ControlFlowNode, Set<String>> kill;
 
-    private Set<String> localVariables;
     private  ControlFlowGraph graph;
-
-    private Set<CtVariable> variables = new HashSet<>();
 
     CtElement functionCtElement;
 
 
     public ReachingDefinition(ControlFlowGraph graph, CtElement functionCtElement){
         this.graph = graph;
+        this.functionCtElement = functionCtElement;
+        initilizeVaribles();
+        determineReachingDefinition();
+    }
+
+    private void determineReachingDefinition(){
+        computeGen();
+        computeKill();
+        computeAlgorithm();
+    }
+
+    private void initilizeVaribles() {
         in = new HashMap();
         out = new HashMap();
         gen =  new HashMap();
         kill = new HashMap();
-        this.functionCtElement = functionCtElement;
-        fillLocalVariables();
-        fillGen();
-        fillKill();
-        computeAlgorithm();
     }
 
-    public Set<CtVariable> getVariables() {
-        return variables;
-    }
 
     public CtElement getFunctionCtElement() {
         return functionCtElement;
@@ -51,7 +52,14 @@ public class ReachingDefinition {
     }
 
     public Set<String> getLocalVariables() {
-        return localVariables;
+
+        Set<ControlFlowNode> controlFlowNodes = graph.vertexSet();
+        return controlFlowNodes
+                        .stream()
+                        .filter(c -> c.getStatement() instanceof CtVariable)
+                        .map(c -> (CtVariable)c.getStatement())
+                        .map(c -> c.getReference().getSimpleName())
+                        .collect(Collectors.toSet());
     }
 
     public Map<ControlFlowNode, Set<String>> getIn() {
@@ -62,23 +70,7 @@ public class ReachingDefinition {
         return out;
     }
 
-    private void fillLocalVariables(){
-        Set<ControlFlowNode> controlFlowNodes = graph.vertexSet();
-        localVariables =
-                controlFlowNodes
-                        .stream()
-                        .filter(c -> c.getStatement() instanceof CtLocalVariable)
-                        .map(c -> (CtLocalVariable)c.getStatement())
-                        .map(c -> c.getReference().clone().toString())
-                        .collect(Collectors.toSet());
-        variables = controlFlowNodes
-                .stream()
-                .filter(c -> c.getStatement() instanceof CtVariable)
-                .map(c -> (CtVariable)c.getStatement())
-                .collect(Collectors.toSet());
-    }
-
-    private void fillGen(){
+    private void computeGen(){
         Set<ControlFlowNode> controlFlowNodes = graph.vertexSet();
         controlFlowNodes.forEach(c -> {
             if(c.getStatement() instanceof CtLocalVariable){
@@ -122,7 +114,7 @@ public class ReachingDefinition {
         gen.put(c, hash);
     }
 
-    private void fillKill(){
+    private void computeKill(){
         List<String> list = gen.values().stream().flatMap(l -> l.stream()).collect(Collectors.toList());
         for (Map.Entry<ControlFlowNode, Set<String>> entry : gen.entrySet()) {
             ControlFlowNode cont = entry.getKey();

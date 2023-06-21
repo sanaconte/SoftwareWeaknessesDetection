@@ -57,6 +57,24 @@ public class Transform {
 
     }
 
+    public static List<CtElement> getMethodsFromProject(String projectDirectory){
+        Launcher launcher = new Launcher();
+        //55165-v1.0.0
+        //String project =  projectName //"55165-v1.0.0";
+        //String val =  "E:\\TFM\\SAMATE-DATA\\"+project;
+        launcher.addInputResource(projectDirectory+"/src/main/java");
+        launcher.getEnvironment().setNoClasspath(true);
+        CtModel model = launcher.buildModel();
+        return  model.getElements(el -> el instanceof CtMethod)
+                .stream()
+                .map(ctEl -> (CtMethod)ctEl)
+                .filter(method -> method.getBody() !=null)
+                .collect(Collectors.toList());
+
+    }
+
+
+
     public static List<CtElement> filterMethodByName(String projectDirectory, Set<String> methods){
         Launcher launcher = new Launcher();
         //55165-v1.0.0
@@ -74,7 +92,7 @@ public class Transform {
 
     }
 
-    private static final List<CtElement> getMethodsFromFile(String fileUri) throws IOException {
+    public static final List<CtElement> getMethodsFromFile(String fileUri) throws IOException {
         String data = getFileContent(fileUri);
         return  Launcher
                     .parseClass(data)
@@ -101,7 +119,7 @@ public class Transform {
             String projectDirectory = "E:/TFM/Trabalho/ProgramaTest/";
             List<Integer> vulnerableLines = Arrays.asList(8);
             String datasetFileName = "programTest.csv";
-            List<CtElement> methodList = getMethodsFromProject(projectDirectory, features);
+            List<CtElement> methodList = getMethodsFromProject(projectDirectory);
 
             //exemplo para um projeto SAMATE
 //            String projectDirectory =  "E:/TFM/SAMATE-DATA-CI/144758-v1.0.0";
@@ -145,14 +163,16 @@ public class Transform {
                 graph.simplifyBlockNodes();
                 graph.simplify();
                 System.out.println(graph.toGraphVisText());
-                ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
                 String projectMethodName = ctElem.getPosition().getFile().getName();
-                Pair<String, Integer> pa = new ImmutablePair<>("a.java", 2);
 
                 Map<String, List<Integer>> VulnerabilityMap = new HashMap<>();
                 VulnerabilityMap.put("a.java", Arrays.asList(33, 19));
                 System.out.println("VulnerabilityMap: "+VulnerabilityMap);
-                FeaturesExtraction featuresExtraction = new FeaturesExtraction(rd, projectMethodName, VulnerabilityMap);
+                ReachingDefinition rd = new ReachingDefinition(graph, ctElem);
+                UseDefinition useDefinition = new UseDefinition(rd);
+                useDefinition.printUseDefinitionChain();
+
+                FeaturesExtraction featuresExtraction = new FeaturesExtraction(rd, useDefinition, projectMethodName, VulnerabilityMap);
                 featuresExtraction.executeExtraction();
                 List<String> transform =
                         featuresExtraction.getResultExtraction();
@@ -160,7 +180,7 @@ public class Transform {
                 //useDefinition.printDataset();
             });
             CsvUtil.printDataset(listaMatrizes);
-            //CsvUtil.createDataset(listaMatrizes, datasetFileName);
+            CsvUtil.createDataset(listaMatrizes, datasetFileName);
             //System.out.println(listaMatrizes);
 
         }catch (Exception e){
