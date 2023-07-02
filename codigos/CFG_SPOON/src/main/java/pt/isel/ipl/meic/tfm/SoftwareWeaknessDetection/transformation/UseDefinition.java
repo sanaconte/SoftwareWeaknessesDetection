@@ -65,7 +65,7 @@ public class UseDefinition {
     }
 
     private String getLiteralValue(CtLiteral literal){
-        return literal.prettyprint();
+        return literal.toString();
     }
 
     private String getVariableName(CtVariableAccess ctVariableAccess){

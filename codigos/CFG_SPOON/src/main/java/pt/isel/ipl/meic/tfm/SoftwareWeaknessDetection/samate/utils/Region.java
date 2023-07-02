@@ -13,4 +13,15 @@ public class Region {
     }
 
     int startLine;
+
+    int endLine;
+
+    @JsonProperty("endLine")
+    public int getEndLine() {
+        return endLine;
+    }
+
+    public void setEndLine(int endLine) {
+        this.endLine = endLine;
+    }
 }

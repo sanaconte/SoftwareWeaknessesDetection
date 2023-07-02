@@ -74,7 +74,7 @@ public class FeaturesExtraction {
         }
         else if(element instanceof CtConstructorCall){
             CtConstructorCall ctConstructorCall = (CtConstructorCall) element;
-            String funcName = ctConstructorCall.getExecutable().prettyprint().split("\\(")[0]+"()";
+            String funcName = ctConstructorCall.getExecutable().getSimpleName();
             List<CtExpression<?>> arguments = ctConstructorCall.getArguments();
             processNode(node, funcName, arguments);
         }
@@ -84,13 +84,13 @@ public class FeaturesExtraction {
         CtElement element = value;
         if(element instanceof CtInvocation) {
             CtInvocation ctInvocation = (CtInvocation) element;
-            String funcName = ctInvocation.getExecutable().getSimpleName() + "()";
+            String funcName = ctInvocation.getExecutable().getSimpleName()+"()";
             List<CtExpression<?>> arguments = ctInvocation.getArguments();
             processNode(key, funcName, arguments);
         }
         else if(element instanceof CtConstructorCall){
             CtConstructorCall ctConstructorCall = (CtConstructorCall) element;
-            String funcName = ctConstructorCall.getExecutable().prettyprint().split("\\(")[0]+"()";
+            String funcName = ctConstructorCall.getExecutable().getSimpleName()+"()";
             List<CtExpression<?>> arguments = ctConstructorCall.getArguments();
             processNode(key, funcName, arguments);
         }
@@ -101,8 +101,11 @@ public class FeaturesExtraction {
             String valueArguments = arguments
                     .stream()
                     .map(expression -> treatExpression(expression))
+                    .map(str -> str.strip())
+                    .filter(str -> str!=null && !str.trim().isBlank() && !str.equals(null) && !str.isEmpty())
                     .collect(Collectors.joining(" "));
             valueArguments = valueArguments.replace(",", "");
+            valueArguments = valueArguments.trim();
             funcFeature.put(node, funcName);
             varFeature.put(node, valueArguments);
             extractedNodes.add(node);
@@ -152,12 +155,12 @@ public class FeaturesExtraction {
     }
 
     private String treatCtInvocation(CtInvocation ctInvocation){
-       return ctInvocation.getExecutable().getSimpleName()+"()";
+       return ctInvocation.getExecutable().getSimpleName();
        //return ctInvocation.prettyprint();
     }
 
     private String treatCtConstructorCall(CtConstructorCall ctConstructorCall){
-        return ctConstructorCall.prettyprint();
+        return ctConstructorCall.getExecutable().getSimpleName();
     }
 
     private String treatCtBinaryOperator(CtBinaryOperator binaryOperator){
@@ -231,7 +234,7 @@ public class FeaturesExtraction {
     }
 
     private String getLiteralValue(CtLiteral literal){
-        return literal.prettyprint();
+        return literal.toString();
     }
 
     private CtElement getFunctionInvoked(ControlFlowNode node) {

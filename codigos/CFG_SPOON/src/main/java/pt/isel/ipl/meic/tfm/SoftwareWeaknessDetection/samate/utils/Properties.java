@@ -2,6 +2,8 @@ package pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.samate.utils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class Properties {
     @JsonProperty("id")
     public int getId() {
@@ -13,6 +15,39 @@ public class Properties {
     }
 
     int id;
+
+    String application;
+
+    @JsonProperty("application")
+    public String getApplication() {
+        return application;
+    }
+
+    @JsonProperty("dependencies")
+    public List<String> getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(List<String> dependencies) {
+        this.dependencies = dependencies;
+    }
+
+    List<String> dependencies;
+
+    public void setApplication(String application) {
+        this.application = application;
+    }
+
+    @JsonProperty("author")
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    String author;
 
     @JsonProperty("version")
     public String getVersion() {
