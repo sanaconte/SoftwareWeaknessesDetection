@@ -74,7 +74,7 @@ public class FeaturesExtraction {
         }
         else if(element instanceof CtConstructorCall){
             CtConstructorCall ctConstructorCall = (CtConstructorCall) element;
-            String funcName = ctConstructorCall.getExecutable().getSimpleName();
+            String funcName = ctConstructorCall.prettyprint().split("\\(")[0]+"()";
             List<CtExpression<?>> arguments = ctConstructorCall.getArguments();
             processNode(node, funcName, arguments);
         }
@@ -90,7 +90,7 @@ public class FeaturesExtraction {
         }
         else if(element instanceof CtConstructorCall){
             CtConstructorCall ctConstructorCall = (CtConstructorCall) element;
-            String funcName = ctConstructorCall.getExecutable().getSimpleName()+"()";
+            String funcName = ctConstructorCall.prettyprint().split("\\(")[0]+"()";
             List<CtExpression<?>> arguments = ctConstructorCall.getArguments();
             processNode(key, funcName, arguments);
         }
@@ -160,7 +160,7 @@ public class FeaturesExtraction {
     }
 
     private String treatCtConstructorCall(CtConstructorCall ctConstructorCall){
-        return ctConstructorCall.getExecutable().getSimpleName();
+        return ctConstructorCall.getExecutable().prettyprint().split("\\(")[0];
     }
 
     private String treatCtBinaryOperator(CtBinaryOperator binaryOperator){

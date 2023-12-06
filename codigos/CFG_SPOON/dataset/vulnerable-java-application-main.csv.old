@@ -1,0 +1,7 @@
+FILE_NAME,LINE_NUMBER,NODE,Func,Var
+DomainTestService.java,28,19,exec(),"new String[]{ ""sh"" ""-c"" ""ping -c 1 "" + domainName }"
+DomainTestService.java,35,30,new UnableToTestDomainException(),"Ping returned exit status  exitValue "": "" new String(process.getErrorStream().readAllBytes())"
+MainController.java,28,56,new ResponseEntity<>(),testDomain
+MainController.java,42,73,new ResponseEntity<>(),testWebsite
+WebsiteTestService.java,26,94,exchange(),"new HttpEntity<>("""" headers)"
+WebsiteTestService.java,24,93,new HttpEntity<>(), new HttpHeaders()

@@ -62,7 +62,7 @@ public class Transform {
         //55165-v1.0.0
         //String project =  projectName //"55165-v1.0.0";
         //String val =  "E:\\TFM\\SAMATE-DATA\\"+project;
-        launcher.addInputResource(projectDirectory+"/src/main/java");
+        launcher.addInputResource(projectDirectory);
         launcher.getEnvironment().setNoClasspath(true);
         CtModel model = launcher.buildModel();
         return  model.getElements(el -> el instanceof CtMethod)
@@ -89,7 +89,6 @@ public class Transform {
                 .filter(method -> method.getBody() !=null)
                 .filter(ctMethod -> methods.stream().anyMatch(feat-> ctMethod.getSimpleName().equals(feat) || ctMethod.getSimpleName().contains(feat)) )
                 .collect(Collectors.toList());
-
     }
 
     public static final List<CtElement> getMethodsFromFile(String fileUri) throws IOException {
@@ -116,7 +115,7 @@ public class Transform {
         //InputStream inputStream = null;
         try {
             // inputs - exemplo para um projeto de test
-            String projectDirectory = "E:/TFM/Trabalho/ProgramaTest/";
+            String projectDirectory = "E:/TFM/Trabalho/ProgramaTest/"+"/src/main/java";
             List<Integer> vulnerableLines = Arrays.asList(8);
             String datasetFileName = "programTest.csv";
             List<CtElement> methodList = getMethodsFromProject(projectDirectory);

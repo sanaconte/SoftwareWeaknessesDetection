@@ -16,7 +16,9 @@ public class PrintFilesName {
 
     public static void main(String[] args) throws IOException {
 
-        String directory = "E:/TFM/SAMATE-CI/";
+        //String directory = "E:/TFM/SAMATE-CI/";
+
+        String directory = "E:/TFM/SAMATE-NPD/";
 
         Stream.of(new File(directory).listFiles())
                 .filter(file -> !file.isDirectory())

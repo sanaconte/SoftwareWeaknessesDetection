@@ -1,8 +1,6 @@
 package pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.dataset;
 
-import pt.isel.ipl.meic.tfm.SoftwareWeaknessDetection.dataset.DatasetFactory;
-
-public class CreateDataset {
+public class CreateTrainDataset {
 
 
     private static final String SLD = "samate";
@@ -11,7 +9,7 @@ public class CreateDataset {
 
     private static void createSet(){
 
-        DatasetFactory.getDataset(SLD, CI_VUL).createSet();
+        DatasetFactory.getDataset(SLD, NPD_VUL).createSet();
 
     }
 

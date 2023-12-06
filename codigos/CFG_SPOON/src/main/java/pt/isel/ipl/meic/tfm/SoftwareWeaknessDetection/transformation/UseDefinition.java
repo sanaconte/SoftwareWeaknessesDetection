@@ -125,7 +125,7 @@ public class UseDefinition {
 
         // para remoção de todos os comentários.
         ctInvocation.setComments(new ArrayList());
-        String functionName = ctInvocation.getExecutable().getSimpleName();
+        String functionName = ctInvocation.prettyprint().split("\\(")[0];
         if(!functionName.isBlank()) {
             //functionSet.add(functionName); -> TODO
             List<String> anyMatchList = reachingDefinition.getLocalVariables()
