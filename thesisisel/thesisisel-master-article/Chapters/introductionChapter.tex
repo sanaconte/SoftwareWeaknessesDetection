@@ -1,0 +1,76 @@
+
+% 
+%  introductonCh.tex
+%  ThesisISEL
+%  
+%  Created by Sana on 2023/01/23.
+%
+\chapter{Introduction}
+\label{cha:introduction_chapter}
+
+In the present day, the absence of software security presents a significant challenge for companies and organizations. Vulnerabilities identified within software can result not only in added expenses but can also be exploited by malicious actors, leading to varying degrees of harm to individuals and organizations alike. It is imperative to possess the appropriate tools and techniques for predicting and detecting the vulnerabilities present in software components developed by teams.
+
+Organizations such as OWASP (Open Web Application Security Project) strive to address this issue by releasing informative documents that raise awareness among developers and focus on web application security. The most recent standard, the 'Top 10 Web Application Security Risks' published in 2021, documents the most crucial vulnerabilities identified in software.
+There are several approaches, including both static and dynamic analysis of the source code \cite{Dejan_Baca_2015}. However, in recent times, machine learning has been used in numerous ways to develop enhanced models and tools.
+
+Since a lot of tools depend on human experts to identify features that might be susceptible to vulnerabilities, they tend to be subjective and demand extensive manual effort. Consequently, there is a preference for leveraging machine learning algorithms to automatically acquire vulnerability-related features. This enables the algorithms to subsequently recognize prevalent patterns of vulnerable code and alert the user.
+Using tools that conduct static code analysis assists developers and organizations in identifying vulnerabilities within production code.
+\newpage
+
+More recently, the application of machine learning techniques to software security has been the subject of intense investigation. Despite the existence of numerous static vulnerability detection systems and studies aimed at this objective, they vary from open-source tools to commercial products and to academic research projects.
+
+One of the primary challenges in identifying vulnerabilities lies is the difficulty of extracting features that accurately describe vulnerable code and distinguish it from secure code. There is a wide variety of different approaches of detecting vulnerabilities \cite{Seyed_Hamid_2022}, such as vulnerability prediction models based on software metrics, where more high-level features are used like: code complexity; anomaly detection models that refer to the problem of describing normal and expected behavior and detecting deviations from it; and vulnerable code pattern recognition, in which features of the code itself are created that are typical for vulnerabilities—such as the absence of input validation before execution. This last approach is widely applied in practice and and will also constitute a central focus of this research.     
+
+% ================
+% = Motivation =
+% ================
+\section{Motivation} % (fold)
+\label{sec:motivation_chapter}
+Without computer software, modern life would not function as it does. Software has become an essential requirement across various sectors of society, encompassing healthcare, energy, transportation, public safety, education, entertainment, and more. Constructing software that is both safe, reliable, and secure is undoubtedly a complex endeavor. Mistakes made by software architects and engineers can readily lead to software vulnerabilities, and the potential consequences of such vulnerabilities can be severe. A vulnerability such as ransomware could potentially disrupt hospitals and transportation systems, leading to hundreds of millions of dollars in damages \cite{Nadeem_Mohammed2023}. Sometimes, even a minor bug in the code can be enough to create a significant vulnerability, rendering the system susceptible to attacks \cite{Fabian_Markus_Konrad2023}. An illustrative example is the Heartbleed vulnerability \cite{Zakir_Durumeric2023} which was discovered in the cryptographic library OpenSSL and impacted billions of internet users. Cyberattacks are increasing significantly, posing threats to governments, businesses, and even civilians, resulting in billions of dollars in losses annually. The number of the new entries in the Common Vulnerabilities and Exposures (CVE) database has been rising. The difficulty of finding vulnerabilities causes strong demands for new methods to help analysis and detect vulnerabilities in software.
+
+\subsection{ Why the chosen research problem is interesting and relevant} % (fold)
+\label{sub:Research_relevance}
+
+Numerous attacks outlined earlier can be identified through code auditing. While acknowledged as one of the most potent defense strategies \cite{Michael_Howard_2Editio}, these audits are time-consuming, expensive, and consequently conducted infrequently. Code auditing demands security expertise that many developers do not possess. Consequently, security reviews are frequently conducted by external security consultants, which contributes to the overall cost. Double-audits (auditing the code twice) are often highly recommended because new security errors are frequently introduced even as old ones are being corrected.
+
+The advantage of static analysis is that it can identify all potential security violations without the need to execute the application. The use of machine learning obviates the requirements for the features detection from source code to be accessible and reinforces the detection of vulnerabilities based static code analysis and machine learning. Our approach can be viewed as efficient and less time-consuming when compared to code auditing. It can be scalable in order to be applied to other programming languages and other vulnerabilities such as enabling the analysis of object-oriented programming languages codes with common vulnerabilities.
+
+This approach can be regarded as distinctive due to its ability to detect vulnerabilities with high precision and highlight the specific sections of the code that are suspected to be vulnerable. This combination of scalability and precision can enable our analysis to find all vulnerabilities matching a specification within the small part of the code that is analyzed statically and efficiently. In contrast, the previous practical approach (code review) is typically time-consuming. Without a precise analysis, the previous approach could lead to inadvertently introduce more security weaknesses or flaws while attempting to fix or address existing vulnerabilities.
+
+% section Research_relevance(end)
+
+\subsection{ Software vulnerability detection -- Challenges 
+} % (fold)
+\label{sub:challenges_of_detecting_vulnerabilities}
+
+Vulnerability detection is a multi-step and time-consuming process. It involves identifying vulnerabilities, comprehending their impact, assessing associated risks, and determining the priority of risks to address.
+
+The existence of vulnerabilities in software is inevitable \cite{MOHAMMED_MUSTAPHA_MAMDOUH}, as writing secure code is a challenging task that demands extensive expertise. Given that humans are prone to errors, even experienced and skilled developers can make programming mistakes that result in serious repercussions for information security. Detecting software vulnerabilities at an earlier stage helps to mitigate these consequences. 
+
+Open-source software has gained extensive utilization across various industries due to its accessibility and flexibility. However, it also introduces potential software security concerns. Programmers often make errors during the code development process, which can result in the creation of software with vulnerabilities. A software vulnerability is a defect in the software design that can be exploited by an attacker in order to obtain some privileges in the system. With the widespread use of open-source software and code reuse practices such as GitHub forks, vulnerable code can rapidly spread from one project to another. Even with substantial time dedicated to searching for vulnerabilities, developers can never be completely certain that their system is one hundred percent secure. Meanwhile, an attacker only needs to discover a single exploitable vulnerability to cause damage, such as crashing a program or exposing sensitive information.
+
+The process of identifying vulnerabilities should be automated using an approach that is not only accurate but also considerably faster than manual code detection. The approach should not require subjective features that are manually defined, but rather learn features from real-life code and automatically adjust to new challenges. A system of this nature would assist human experts by diminishing or eliminating the requirement for the most time-consuming and error-prone tasks involved in vulnerability detection. With a low false positive rate in test results, such system  would offer significant benefits to developers by identifying potential vulnerabilities directly in their source code.
+
+In fact, machine learning techniques are not yet widely used, compared to static analysis and other traditional approaches. Studies and investigations have been conducted in the field of machine learning to detect features related to vulnerabilities, however, a significant portion of these studies primarily focus on synthetic code examples, use a very small code base as a dataset, or are only relevant to a small set of projects.
+
+For these reasons, this work aims to make a contribution to the field by presenting a system that utilizes static code analysis along with machine learning techniques to identify critical software security vulnerabilities.
+
+% subsection Challenges of detecting vulnerabilities (end)
+
+% section Motivation (end)
+
+
+% ================
+% = Research Context =
+% ================
+\section{Research Statement and Contribution} % (fold)
+\label{sec:research_statement}
+
+The process of vulnerability detection should be automated to a considerable extent, offering a significant level of precision and speed compared to manual source code analysis. It should acquire features from actual vulnerable code and autonomously identify vulnerabilities. Such a tool would assist human experts by reducing or eliminating the need for time-consuming and error-prone tasks involved in vulnerability detection. With a low rate of false positives in test results, the tool could prove highly beneficial for developers by detecting potential vulnerabilities within the source code.
+	
+In fact, machine learning techniques are not yet widely adopted, in contrast to static analysis and other traditional approaches. The application of machine learning techniques to software security has been a subject of intensive investigation, particularly for vulnerability feature detection. Nevertheless, numerous studies focus on synthetic examples. There are several programming languages that have not received substantial attention so far. Different techniques have been applied in source code vulnerability detection, yet certain approaches may not address all issues or may not be suitable for all types of vulnerabilities that have arisen.
+
+{\Large \textbf{Our contributions}}
+
+In this work, we have explored the use of static-code analysis hybridized with machine learning techniques to detect critical software security vulnerabilities. The primary emphasis of this research is on examining established static code analysis and machine learning methods, along with their potential application scenarios. Subsequently, a prototype tool is implemented, which leverages these techniques to learn vulnerability features from a comprehensive database sourced from SAMATE \cite{SAMATE2023}. The prototype tool specifically targets the Java programming language. This tool serves as a proof of concept, reinforcing the effectiveness of this approach for vulnerabilities detection. Its applicability highlight the possibility of combining static code analysis and machine learning to identify vulnerabilities in source code.
+% section Research Statement and Contribution (end)

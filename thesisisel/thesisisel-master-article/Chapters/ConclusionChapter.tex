@@ -1,0 +1,34 @@
+% 
+%  ConclusionChapter.tex
+%  ThesisISEL
+%  
+%  Created by Sana on 2023/08/09.
+%
+
+
+
+\chapter{Conclusion}
+\label{cha:Conclusion_chapter}
+
+In this work, we have presented Software Weakness Detection, a system for vulnerability detection based on Machine Learning applied to source code. The research purpose is to relieve human experts from the time-consuming and subjective work of manually defining features for vulnerability detection. This work demonstrates the potential of using machine learning directly on source code in order to learn such vulnerability features by leveraging classifier models.
+
+The system works on Java source code and can predict 2 different types of vulnerabilities (Command Injection and Null Pointer Deferences). To create the basis for the tool, a large dataset was derived from SAMATE projects and transformed according to the model inputs. The data was transformed from several SAMATE projects examples containing code snippets and for 2 different types of vulnerabilities. 
+
+A classifier model based on Logistic Regression algorithm has been trained on a large data of java source code to be able to perform vulnerabilities detection. Systematic experiments show that our tool achieves, on average, an accuracy of 96.5\%, a recall of 95\%, a precision of 95\% and an F1 score of 96.5\% using SAMATE data with a ratio of 60\% for the training dataset and 40\% for the test dataset. Similarly, with data from real projects, we achieved favorable results. Despite encountering some false positives, the model was able to detect vulnerabilities in genuinely vulnerable locations. These results are very promising and encourage for further research in this area.
+
+Future work should focus on improving the approach for extracting features from data, gathering a larger quantity of data, combining the tool with other approaches for enhanced results, and exploting codes from real projects. The work could also be extended to other programming languages or types of vulnerabilities. Our project has been made available as a public Github repository alongside with datasets, trained models, and examples \cite{sanaconte2023}.
+
+\section{Future work} % (fold)
+\label{sec:Future_work}
+
+There are several unsolved issues for future research in this field of study. Firstly, the approach itself could probably be adjusted and improved, for instance, by optimizing the feature extraction process or more data collection as discussed earlier. 
+
+The 'Var' attribute values could be refined in order to match exactly the same pattern with the truly vulnerable codes in order to improve false positives cases from the model.
+
+Our data set is very biased due to the fact that each source code line is a sample and there are more non-vulnerable lines than vulnerable ones. The data could be compiled and filtered more thoroughly, leading to much more representative samples. By collecting more data from different source, it could be ensured that a larger percentage of the samples actually contain more relevant examples.
+
+Our approach could be experimented with different programming languages like PHP, C++, or C\#. First, we need to see if the process of extracting features (data transformation) works well for those languages. If it does, we can train the model on datasets from those languages and compare it to other research. Additionally, we could use our approach on various type of applications, including web and mobile apps or software in specific fields with their unique security risks.
+
+The approach could also be extended to provide alerts for bugs that may be present in the source code. There is a whole research area dealing with this problem, and the application of machine learning can surely offer valuable insights. The possibilities are vast, and a lot of work is still to be done in this area.
+
+Finally, a subsequent expansion could involve building a fully functional vulnerability detection system with high usability that takes code as input and detect vulnerabilities. While a simple prototype tool has already been constructed in this work, it has not been optimized for usability in daily programming. One option would be to create a plugin for an IDE or a highly customized command line tool.

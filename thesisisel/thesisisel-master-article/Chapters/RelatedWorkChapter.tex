@@ -1,0 +1,72 @@
+% 
+%  RelatedWorkChapter.tex
+%  ThesisISEL
+%  
+%  Created by Sana on 2023/02/05.
+%
+
+\chapter{Related Work}
+\label{cha:relatedwork_chapter}
+
+
+Up to this point, we have been describing the basic concepts necessary for this work. The subsequent section will describe previous works related with vulnerabilities detection at software and attempts of using machine learning. Despite of many different criteria under which approaches can be compared, the advantages and disadvantages of the previous approaches are described, and our approach is compared with them.
+
+
+% ================
+% = Discovering vulnerabilities using data-flow analysis and machine learning =
+% ================
+\section{Discovering vulnerabilities using data-flow analysis and machine learning} % (fold)
+\label{sec:	Discovering_vulnerabilities_using_data_flow_analysis_and_machine_learning}
+
+
+Kronjee and Vranken introduce an innovative approach to static analysis, wherein they combine data-flow analysis with machine learning techniques to identify vulnerabilities within source code \cite{Kronjee2018}.
+
+They had investigated whether machine learning techniques in conjunction with static code analysis to identify insecure code within a particular dynamic programming language, specifically PHP. The focus of the research has been on web application vulnerabilities, specifically SQL injection (SQLi) and Cross-Site Scripting (XSS). The key achievement of this study involves the development of a tool capable of detecting vulnerable PHP code through the utilization of a probabilistic classifier and features extracted via data-flow analysis.
+
+They assembled a dataset from sources such as the National Vulnerability Database (NVD) \cite{NVD2023} and Software Assurance Metrics And Tool Evaluation Project (SAMATE) \cite{SAMATE2023} project. This dataset comprised samples of vulnerable PHP code as well as their patched versions, where the vulnerabilities were rectified. They employed data-flow analysis techniques, including reaching definitions analysis, taint analysis, and reaching constants analysis, to extract features from the code samples. Subsequently, they used these features within machine learning to train diverse probabilistic classifiers.
+
+With the results obtained, they demonstrated that using machine learning in combination with features extracted from control-flow graphs and abstract syntax trees can be an effective approach for vulnerability detection in dynamic languages, in particular PHP applications. To demonstrate the effectiveness of the approach, they built a tool called \texttt{WIRECAML}, and compared the tool to other tools for vulnerability detection in PHP code.
+
+However, the tool does exhibit a number of limitations, both in aspect of inherent and in aspect of technical nature. Due to the complexity of processing arrays of data and, due to the fact that the data set consists of multiple vulnerabilities in different versions of the same application and considering that these application versions share a lot of the same code, the data set can contains duplicate samples.
+
+% section Discovering_vulnerabilities_using_data_flow_analysis_and_machine_learning (end)
+
+
+% ================
+% = Detecting Software Vulnerabilities with Deep Learning =
+% ================
+\section{Detecting Software Vulnerabilities with Deep Learning} % (fold)
+\label{sec:	Detecting_Software_Vulnerabilities_with_Deep_Learning}
+
+Wartschinski et al. introduce an approach known as "Vulnerability Detection with Deep Learning on a Natural Codebase master-VUDENC" (VUDENC) \cite{Wartschinski2019}. This is a vulnerability detection system based on deep learning, designed to autonomously learn features from an extensive compilation of real-world code.
+The primary purpose of VUDENC’s was to relieve human experts from the labor-intensive and subjective task of manually determining features for vulnerability detection \cite{Wartschinski2019}. 
+
+VUDENC selected Python as the target programming language for its case study.
+
+A large dataset of commits was collected and mined from Github and labeled according to the commit context. The data stems from several hundred real-world repositories containing natural source code and covers seven different types of vulnerabilities, including SQL injections, cross-site scripting and command injections. The data samples were created from the source code of the vulnerable files by taking individual code tokens and their context, allowing for a fine-grained analysis. A word2vec model was used to traine on a large corpus of Python code to be able to perform embeddings of code tokens (vector representations of source-code) that preserve semantics, and has been made available as well. Word2vec \cite{Word2vec} is a technique for natural language processing (NLP) \cite{NLP_WIKIPEDIA}. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text (a large and structured set of texts ). After pre-processing the raw source code, the datasets for each vulnerability were built by taking every single code token with its context (the tokens before and after it) as one sample and embedding it using the word2vec model. A Long Short Term Memory (LSTM) network was trained on each dataset to detect vulnerable code on the level of individual tokens. The author was able to demonstrate that the experiments with VUDENC achieved, on average, an accuracy of 96.8\%, a recall of 83\%, a precision of 91\% and an F1 score of 87\%. These results were very promising and encourage further research in this area \cite{Wartschinski2019}. VUDENC was able to highlight the specific areas in code that are likely to contain vulnerabilities and provide confidence levels for its predictions.
+
+The research successfully demonstrate the capability of employing machine learning directly on source code to learn vulnerability-related features through the utilization of LSTM models. VUDENC was specifically designed to operate on Python source code and exhibit proficiency in predicting 7 distinct types of vulnerabilities \cite{Wartschinski2019}.
+
+% section Detecting_Software_Vulnerabilities_with_Deep_Learning (end)
+
+% ================
+% = VulDeePecker A Deep Learning Based System For Vulnerability Detection =
+% ================
+\section{VulDeePecker A Deep Learning Based System For Vulnerability Detection} % (fold)
+\label{sec:	VulDeePecker_A_Deep_Learning_Based_System_For_Vulnerability_Detection}
+
+Zhen Li et al. presented VulDeePecker \cite{Zhen_Li2018}, the first deep learning based vulnerability detection system. This system was aims to relieve human experts from the tedious and subjective work of manually defining features and reduce the false negatives that are incurred by other vulnerability detection systems.\\ 
+
+In their work, the authors start by presenting some preliminary principles for guiding the practice of applying deep learning to vulnerability detection because deep learning was not invented for this kind of applications, which means that they needed some guiding principles for applying deep learning to vulnerability detection. They have collected, and made publicly available, a useful dataset for evaluating the effectiveness of VulDeePecker and other deep learning-based vulnerability detection systems that could be developed in the future. \\
+
+Systematic experiments have showed that VulDeePecker could achieve much lower false negative rate than other vulnerability detection systems, while relieving human experts from the tedious work of manually defining features. For the 3 software products they experimented with (i.e., Xen, Seamonkey, and Libav), VulDeePecker detected 4 vulnerabilities, which were not reported in the NVD and were “silently” patched by the vendors when they released later versions of these products. In contrast, the other detection systems missed almost all of these vulnerabilities, except that one system detected 1 of these vulnerabilities and missed the other three vulnerabilities.
+
+Despite having a sound approach, the design, implementation, and evaluation of VulDeePecker exhibited several limitations, which suggested open problems for future research. The design of VulDeePecker is limited to dealing with vulnerability detection by assuming source code of programs was available. The detection of vulnerabilities in executable was a different and more challenging problem. The design of VulDeePecker only deals
+with C/C++ programs. Future research needs to be conducted to adapt it to deal with other kinds of programming languages. 
+
+VulDeePecker has two advantages. First, it does not need human experts to define features for distinguishing vulnerable code and non-vulnerable code. Second, it uses a fine-grained granularity to represent programs, and therefore can pin down the precise locations of vulnerabilities.
+
+% section VulDeePecker_A_Deep_Learning_Based_System_For_Vulnerability_Detection (end)
+
+
+
