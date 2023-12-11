@@ -16,3 +16,15 @@ The system works on Java source code and can predict 2 different types of vulner
 tool, a large dataset was derived from SAMATE projects and transformed according to
 the model inputs. The data was transformed from several SAMATE projects examples
 containing code snippets and for 2 different types of vulnerabilities.
+
+
+## Authors
+
+	Sana Conté
+
+September, 25th 2023
+
+
+# License
+
+[MIT](https://choosealicense.com/licenses/mit/)
